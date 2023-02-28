@@ -21,13 +21,13 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        OutOfBounds();
+        //OutOfBounds();
     }
 
     public void RespawnPlayer()
@@ -45,12 +45,13 @@ public class LevelManager : MonoBehaviour
         PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
         UIController.sharedInstance.UpdateHealthDisplay();
     }
-
-    public void OutOfBounds()
-    {
-        if (Playercontroller.sharedInstance.transform.position.y < -7)
-        {
-            RespawnPlayer();
-        }
-    }
 }
+
+//    public void OutOfBounds()
+//    {
+//        if (Playercontroller.sharedInstance.transform.position.y < -7)
+//        {
+//            RespawnPlayer();
+//        }
+//    }
+//}

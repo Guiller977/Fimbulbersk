@@ -11,7 +11,7 @@ public class Playercontroller : MonoBehaviour
     public bool isHurt;
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
-    private bool canDoubleJump;
+    //private bool canDoubleJump;
     private Animator anim;
     private SpriteRenderer theSR;
     public bool isLeft;
@@ -47,16 +47,16 @@ public class Playercontroller : MonoBehaviour
                 if (isGrounded)
                 {
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    canDoubleJump = true;
+                    //canDoubleJump = true;
                 }
             }
             else
             {
-                if (canDoubleJump)
-                {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    canDoubleJump = false;
-                }
+                //if (canDoubleJump)
+                //{
+                //    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                //    canDoubleJump = false;
+                //}
             }
             if (theRB.velocity.x < 0)
             {
