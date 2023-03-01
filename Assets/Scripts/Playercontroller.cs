@@ -16,6 +16,12 @@ public class Playercontroller : MonoBehaviour
     private SpriteRenderer theSR;
     public bool isLeft;
 
+    private bool canDash = true;
+    private bool isDashing;
+    public float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
     public float knockBackLength, knockBackForce;
     private float knockBackCounter;
 
@@ -37,6 +43,10 @@ public class Playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
 
         if (knockBackCounter <= 0)
         {
@@ -68,6 +78,11 @@ public class Playercontroller : MonoBehaviour
                 theSR.flipX = true;
                 isLeft = false;
             }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+            {
+                StartCoroutine(Dash());
+            }
         }
         else
         {
@@ -84,11 +99,38 @@ public class Playercontroller : MonoBehaviour
         anim.SetFloat("movSpeed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isHurt", isHurt);
-    }
 
+        
+    }
     public void KnockBack()
     {
         knockBackCounter = knockBackLength;
         theRB.velocity = new Vector2(0f, knockBackForce);
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = theRB.gravityScale;
+        theRB.gravityScale = 0f;
+        if (isLeft)
+        {
+            theRB.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
+            yield return new WaitForSeconds(dashingTime);
+            theRB.gravityScale = originalGravity;
+            isDashing = false;
+            yield return new WaitForSeconds(dashingCooldown);
+            canDash = true;
+        }
+        else
+        {
+            theRB.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+            yield return new WaitForSeconds(dashingTime);
+            theRB.gravityScale = originalGravity;
+            isDashing = false;
+            yield return new WaitForSeconds(dashingCooldown);
+            canDash = true;
+        }  
     }
 }
