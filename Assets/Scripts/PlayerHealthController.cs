@@ -7,7 +7,7 @@ public class PlayerHealthController : MonoBehaviour
     public int currentHealth, maxHealth = 3;
 
     public float invincibleLength;
-    private float invincibleCounter;
+    public float invincibleCounter;
     private SpriteRenderer theSR;
 
     public static PlayerHealthController sharedInstance;

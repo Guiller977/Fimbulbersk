@@ -116,6 +116,7 @@ public class Playercontroller : MonoBehaviour
         theRB.gravityScale = 0f;
         if (isLeft)
         {
+            PlayerHealthController.sharedInstance.invincibleCounter = dashingTime;
             theRB.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
             yield return new WaitForSeconds(dashingTime);
             theRB.gravityScale = originalGravity;
@@ -125,6 +126,7 @@ public class Playercontroller : MonoBehaviour
         }
         else
         {
+            PlayerHealthController.sharedInstance.invincibleCounter = dashingTime;
             theRB.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
             yield return new WaitForSeconds(dashingTime);
             theRB.gravityScale = originalGravity;

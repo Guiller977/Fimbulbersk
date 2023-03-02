@@ -4,41 +4,22 @@ using UnityEngine;
 
 public class AxeController : MonoBehaviour
 {
-    public bool isFire, isIce;
-    public float force;
-    private Vector3 mousePos;
-    private Rigidbody2D theRB;
-    private Camera mainCam;
-    public static AxeController sharedInstance;
+    private float speed = 10.0f;
+    private Vector3 target;
+    private Vector2 position;
+    private Rigidbody theRB;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        if (sharedInstance == null)
-        {
-            sharedInstance = this;
-        }
-    }
     void Start()
     {
-        
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
+        float step = speed * Time.deltaTime;
 
-    public void AxeThrown()
-    {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        theRB = GetComponent<Rigidbody2D>();
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-        theRB.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        // move sprite towards the target location
+        //transform.position = Vector2.MoveTowards(new Vector2(0,0), new Vector2(10,0), step);
+        theRB.velocity = new Vector3(step, 0, 0);
     }
 }
