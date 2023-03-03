@@ -73,6 +73,7 @@ public class PlayerHealthController : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+            
         }
         UIController.sharedInstance.UpdateHealthDisplay();
     }

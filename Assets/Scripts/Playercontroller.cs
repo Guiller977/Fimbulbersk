@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Playercontroller : MonoBehaviour
 {
+    private bool canDoubleJump;
     public float moveSpeed;
     public Rigidbody2D theRB;
     public float jumpForce;
@@ -57,16 +58,17 @@ public class Playercontroller : MonoBehaviour
                 if (isGrounded)
                 {
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    //canDoubleJump = true;
+                    //Cambiar esto si se incluye doble salto
+                    canDoubleJump = false;
                 }
             }
             else
             {
-                //if (canDoubleJump)
-                //{
-                //    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                //    canDoubleJump = false;
-                //}
+                if (canDoubleJump)
+                {
+                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    canDoubleJump = false;
+                }
             }
             if (theRB.velocity.x < 0)
             {
