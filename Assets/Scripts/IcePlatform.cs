@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IcePlatform : MonoBehaviour
 {
+    public GameObject SolidIcePlatform, IcePlatformReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,15 @@ public class IcePlatform : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.attachedRigidbody.velocity = new Vector2(0, 0);
+        if (collision.CompareTag("IceAxe"))
+        {
+            collision.attachedRigidbody.velocity = new Vector2(0, 0);
+            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Destroy(IcePlatformReference);
     }
 }

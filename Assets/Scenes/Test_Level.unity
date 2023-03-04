@@ -427,11 +427,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 63265a00a676a5841932779e3d9a7cf1, type: 3}
---- !u!1 &609781072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6898629132461322788, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-  m_PrefabInstance: {fileID: 1216214122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &941601120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -526,6 +521,8 @@ GameObject:
   - component: {fileID: 1061148380}
   - component: {fileID: 1061148379}
   - component: {fileID: 1061148378}
+  - component: {fileID: 1061148381}
+  - component: {fileID: 1061148382}
   m_Layer: 6
   m_Name: Ice Platform
   m_TagString: Untagged
@@ -619,13 +616,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061148377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -1.25, z: 0}
+  m_LocalPosition: {x: -0, y: -2, z: 0}
   m_LocalScale: {x: 2.5906, y: 0.3899, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 282468132}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1061148381
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061148377}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1061148382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061148377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55163b6bfe259f44a7aff68a66bdaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1178752521
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,21 +770,13 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1436139525, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-      propertyPath: iceAxeSprite
-      value: 
-      objectReference: {fileID: 1218989208}
-    - target: {fileID: 1436139525, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-      propertyPath: fireAxeSprite
-      value: 
-      objectReference: {fileID: 1749959140}
     - target: {fileID: 6898629132461322784, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6898629132461322784, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6898629132461322784, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
       propertyPath: m_LocalPosition.y
@@ -804,32 +821,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
---- !u!1 &1218989208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7829920536181444448, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-  m_PrefabInstance: {fileID: 1216214122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1436139519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6898629132461322784, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
   m_PrefabInstance: {fileID: 1216214122}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1436139531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609781072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d439a04591f24994483c5eb5855049cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 3
-  invincibleLength: 0
-  invincibleCounter: 0
 --- !u!1 &1466155298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,11 +1264,6 @@ Transform:
   m_Father: {fileID: 282468132}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &1749959140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5036960115426308305, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-  m_PrefabInstance: {fileID: 1216214122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869074590
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,12 +97,12 @@ public class Playercontroller : MonoBehaviour
             {
                 theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
             }
-        } 
+        }
         anim.SetFloat("movSpeed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isHurt", isHurt);
 
-        
+
     }
     public void KnockBack()
     {
@@ -135,6 +135,6 @@ public class Playercontroller : MonoBehaviour
             isDashing = false;
             yield return new WaitForSeconds(dashingCooldown);
             canDash = true;
-        }  
+        }
     }
 }

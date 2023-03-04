@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 6898629132461322787}
   - component: {fileID: 6898629132461322786}
   - component: {fileID: 1436139525}
+  - component: {fileID: 1436139531}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -149,7 +150,7 @@ Transform:
   - {fileID: 2326442864508793848}
   - {fileID: 2020186519183791326}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6898629132461322785
 SpriteRenderer:
@@ -298,6 +299,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iceAxe: {fileID: 2980568921155841862, guid: 62527c0f05e1e864d8a0e194bf867cf0, type: 3}
   fireAxe: {fileID: 3276102521071537721, guid: c87ff3d6787157546be833090da98cfb, type: 3}
+  iceAxeSprite: {fileID: 7829920536181444448}
+  fireAxeSprite: {fileID: 5036960115426308305}
+  iceAxeReference: {fileID: 0}
+  fireAxeReference: {fileID: 0}
+  iceCanBeThrown: 0
+  fireCanBeThrown: 0
+--- !u!114 &1436139531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898629132461322788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d439a04591f24994483c5eb5855049cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 3
+  invincibleLength: 0
+  invincibleCounter: 0
 --- !u!1 &6898629132718390541
 GameObject:
   m_ObjectHideFlags: 0
