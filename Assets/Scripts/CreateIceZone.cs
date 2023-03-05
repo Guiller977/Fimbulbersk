@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IcePlatform : MonoBehaviour
+public class CreateIceZone : MonoBehaviour
 {
-    public GameObject SolidIcePlatform, IcePlatformReference;
+    public GameObject IceZone, IceZoneReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,12 @@ public class IcePlatform : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("IceAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+            IceZoneReference = Instantiate(IceZone, collision.transform.position, transform.rotation);
         }
     }
 
@@ -30,7 +30,7 @@ public class IcePlatform : MonoBehaviour
     {
         if (collision.CompareTag("IceAxe"))
         {
-            Destroy(IcePlatformReference);
-        }        
+            Destroy(IceZoneReference);
+        }
     }
 }
