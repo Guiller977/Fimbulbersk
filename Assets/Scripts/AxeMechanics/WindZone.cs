@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateIceZone : MonoBehaviour
+public class WindZone : MonoBehaviour
 {
-    public GameObject IceZone, IceZoneReference;
+    public GameObject windZone, windZoneReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,21 +16,20 @@ public class CreateIceZone : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("IceAxe"))
+        if (collision.CompareTag("FireAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            IceZoneReference = Instantiate(IceZone, collision.transform.position, transform.rotation);
+            windZoneReference = Instantiate(windZone, collision.transform.position, transform.rotation);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("IceAxe"))
+        if (collision.CompareTag("FireAxe"))
         {
-            Destroy(IceZoneReference);
+            Destroy(windZoneReference);
         }
     }
 }

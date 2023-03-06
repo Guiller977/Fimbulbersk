@@ -44,6 +44,10 @@ public class Playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (moveSpeed > 18)
+        {
+            moveSpeed = 8;
+        }
         if (isDashing)
         {
             return;
