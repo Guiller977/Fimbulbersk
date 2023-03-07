@@ -8,7 +8,7 @@ public class Playercontroller : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D theRB;
     public float jumpForce;
-    private bool isGrounded;
+    public bool isGrounded;
     public bool isHurt;
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
@@ -64,6 +64,7 @@ public class Playercontroller : MonoBehaviour
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
                     //Cambiar esto si se incluye doble salto
                     canDoubleJump = false;
+
                 }
             }
             else
