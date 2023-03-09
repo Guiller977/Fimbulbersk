@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b2fda6287b51b3458b432ec9e2e1582
+guid: 7837a77a786669f47bf5d45a4686d49d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17aaa343c496821429d1152399838ec8
-      internalID: 1192745466
+      spriteID: 950ddf4d510360a479ec51833db23c10
+      internalID: 1426848200
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27cc2e0814b30d646bf0edaea724cd88
-      internalID: 211116831
+      spriteID: 8b3c3fbb70ddc2140a52e2cb0f3e56f2
+      internalID: -2069532121
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66108e5caba4661428b05d1ca6ceff5f
-      internalID: 1218961956
+      spriteID: 16b914fad34d9d64d9e5c486c4b0021a
+      internalID: 1454304997
       vertices: []
       indices: 
       edges: []
@@ -196,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c1f217112e24914e92d8265e67b2f3e
-      internalID: -2134032836
+      spriteID: 266a9d8a50c64a148a20b209c1ecf452
+      internalID: -1256815741
       vertices: []
       indices: 
       edges: []
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a089d3e812c82284d9a3db41873edd03
-      internalID: 1487416298
+      spriteID: e99f2a56159d13542a322f519076df46
+      internalID: -580222916
       vertices: []
       indices: 
       edges: []
@@ -234,11 +234,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gem_3: -2134032836
-      gem_2: 1218961956
-      gem_0: 1192745466
-      gem_4: 1487416298
-      gem_1: 211116831
+      gem_3: -1256815741
+      gem_2: 1454304997
+      gem_0: 1426848200
+      gem_4: -580222916
+      gem_1: -2069532121
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cb8af2d6df47cd840b5c3b664eccf65c
+guid: 1b3a977317ddc354b8bbc2f168523683
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c476a5ad2a42da9478c7b22c14d93f41
-      internalID: -1583626580
+      spriteID: f6ce8d68054434844adc6ef67ed3bbc3
+      internalID: 2006237744
       vertices: []
       indices: 
       edges: []
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8538fff96493d6429bdd2cff044764d
-      internalID: 501393411
+      spriteID: 6776165fa994ea849b895bd9775ce0e0
+      internalID: -1533886914
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c6c9ae74114ac148956749e146ecf35
-      internalID: 1929787956
+      spriteID: c32b85593edc8ef44ad2bf9816c85fc5
+      internalID: 636740538
       vertices: []
       indices: 
       edges: []
@@ -192,9 +192,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      potion_0: -1583626580
-      potion_2: 1929787956
-      potion_1: 501393411
+      potion_0: 2006237744
+      potion_2: 636740538
+      potion_1: -1533886914
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

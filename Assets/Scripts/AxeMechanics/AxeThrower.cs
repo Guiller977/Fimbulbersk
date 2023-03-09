@@ -6,6 +6,9 @@ public class AxeThrower : MonoBehaviour
 {
     public GameObject iceAxe, fireAxe, iceAxeSprite, fireAxeSprite, iceAxeReference, fireAxeReference;
     public bool iceCanBeThrown, fireCanBeThrown;
+    public float damage;
+
+    public static AxeThrower sharedInstance;
 
     // Start is called before the first frame update
     void Start()

@@ -149,3 +149,4 @@ MonoBehaviour:
   theRB: {fileID: 0}
   playerpos: {fileID: 0}
   diference: 0
+  damage: 5

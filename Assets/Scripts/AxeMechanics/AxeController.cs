@@ -10,7 +10,7 @@ public class AxeController : MonoBehaviour
     public Transform playerpos;
     public float diference;
     public static AxeController sharedInstance;
-
+    public float damage;
     private void Awake()
     {
         if (sharedInstance == null)
