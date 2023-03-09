@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     //Velocidad del enemigo
-    public float moveSpeed;
+    public float moveSpeed, moveSpeerAux;
     public float hp;
     public bool isFrozen;
     public bool isOnFire;
@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeerAux = moveSpeed;
         //Inicializamos el Rigidbody del enemigo
         theRB = GetComponent<Rigidbody2D>();
         //Inicializamos el SpriteRenderer del enemigo teniendo en cuenta que está en el GO hijo
@@ -54,12 +55,12 @@ public class EnemyController : MonoBehaviour
 
         if (isOnFire == true)
         {
-            StartCoroutine(FireDamage());
-            Debug.Log(hp);
+            hp = hp - Time.deltaTime;
         }
 
         if (isFrozen == false)
         {
+            moveSpeed = moveSpeerAux;
 
             //Si el enemigo se está moviendo hacia la derecha
             if (movingRight)
@@ -109,6 +110,7 @@ public class EnemyController : MonoBehaviour
             if (isFrozen == true)
             {
                 hp = hp - (AxeController.sharedInstance.damage * 2);
+                isFrozen = false;
             }
 
             else
@@ -124,6 +126,7 @@ public class EnemyController : MonoBehaviour
             {
                 hp = hp - (AxeController.sharedInstance.damage * 2);
                 isOnFire = true;
+                isFrozen = false;
             }
 
             else
@@ -134,15 +137,32 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FireAxe") || collision.CompareTag("IceAxe"))
+        {
+            collision.transform.position = this.transform.position;
+            collision.attachedRigidbody.velocity = theRB.velocity;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FireAxe"))
+        {
+            StartCoroutine(StopFire());
+        }
+    }
+
     private IEnumerator Timer()
     {
         yield return new WaitForSeconds(1f);
         isFrozen = true;
     }
 
-    private IEnumerator FireDamage()
+    private IEnumerator StopFire()
     {
-        hp--;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
+        isOnFire = false;
     }
 }
