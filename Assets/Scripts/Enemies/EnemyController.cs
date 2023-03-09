@@ -26,6 +26,16 @@ public class EnemyController : MonoBehaviour
     //Referencia al Animator del enemigo
     private Animator anim;
 
+    public static EnemyController sharedInstance;
+
+    private void Awake()
+    {
+        if (sharedInstance == null)
+        {
+            sharedInstance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,13 +119,13 @@ public class EnemyController : MonoBehaviour
         {
             if (isFrozen == true)
             {
-                hp = hp - (AxeController.sharedInstance.damage * 2);
+                DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isFrozen = false;
             }
 
             else
             {
-                hp = hp - AxeController.sharedInstance.damage;
+                DamageEnemy(AxeController.sharedInstance.damage);
                 StartCoroutine(Timer());
             }
         }
@@ -124,14 +134,14 @@ public class EnemyController : MonoBehaviour
         {
             if (isFrozen == true)
             {
-                hp = hp - (AxeController.sharedInstance.damage * 2);
+                DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isOnFire = true;
                 isFrozen = false;
             }
 
             else
             {
-                hp = hp - AxeController.sharedInstance.damage;
+                DamageEnemy(AxeController.sharedInstance.damage);
                 isOnFire = true;
             }
         }
@@ -164,5 +174,10 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         isOnFire = false;
+    }
+
+    public void DamageEnemy(float damage)
+    {
+        hp = hp - damage;
     }
 }

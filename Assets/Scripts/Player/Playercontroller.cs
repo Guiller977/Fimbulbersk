@@ -26,6 +26,10 @@ public class Playercontroller : MonoBehaviour
     public float knockBackLength, knockBackForce;
     private float knockBackCounter;
 
+    public GameObject lightHitbox, heavyHitbox;
+    private float attackDuration = 0.25f;
+    private float attackCooldown;
+
     public static Playercontroller sharedInstance;
     void Awake()
     {
@@ -51,6 +55,20 @@ public class Playercontroller : MonoBehaviour
         if (isDashing)
         {
             return;
+        }
+
+        attackCooldown -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.E) && isLeft == false && attackCooldown <= 0)
+        {
+            Instantiate(lightHitbox, new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = attackDuration;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && isLeft == true && attackCooldown <= 0)
+        {
+            Instantiate(lightHitbox, new Vector3(this.transform.position.x - 1, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = attackDuration;
         }
 
         if (knockBackCounter <= 0)
