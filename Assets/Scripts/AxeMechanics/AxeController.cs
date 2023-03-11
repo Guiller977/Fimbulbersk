@@ -11,6 +11,7 @@ public class AxeController : MonoBehaviour
     public float diference;
     public static AxeController sharedInstance;
     public float damage;
+    public float speed;
     private void Awake()
     {
         if (sharedInstance == null)
@@ -35,6 +36,10 @@ public class AxeController : MonoBehaviour
     void Throw()
     {
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(playerpos.position.x, playerpos.position.y, playerpos.position.z);
-        theRB.AddForce(target, ForceMode2D.Impulse);
+        theRB.AddForce(target.normalized * speed, ForceMode2D.Impulse);
     }
+
+
+    //target = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(playerpos.position.x, playerpos.position.y, playerpos.position.z);
+    //theRB.AddForce(target, ForceMode2D.Impulse);
 }

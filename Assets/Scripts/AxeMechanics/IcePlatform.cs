@@ -30,7 +30,13 @@ public class IcePlatform : MonoBehaviour
     {
         if (collision.CompareTag("IceAxe"))
         {
-            Destroy(IcePlatformReference);
+            StartCoroutine(Wait());
         }        
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(IcePlatformReference);
     }
 }
