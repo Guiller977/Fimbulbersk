@@ -126,7 +126,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 DamageEnemy(AxeController.sharedInstance.damage);
-                StartCoroutine(Timer());
+                StartCoroutine(Timer(1f));
             }
         }
         
@@ -145,6 +145,34 @@ public class EnemyController : MonoBehaviour
                 isOnFire = true;
             }
         }
+
+        //else if (collision.CompareTag("LightHitbox"))
+        //{
+
+        //    if (isFrozen == true)
+        //    {
+        //        DamageEnemy(10);
+        //        isFrozen = false;
+        //    }
+        //    else
+        //    {
+        //        DamageEnemy(5);
+        //    }
+        //}
+
+        //else if (collision.CompareTag("HeavyHitbox"))
+        //{
+
+        //    if (isFrozen == true)
+        //    {
+        //        DamageEnemy(20);
+        //        isFrozen = false;
+        //    }
+        //    else
+        //    {
+        //        DamageEnemy(10);
+        //    }
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -164,9 +192,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private IEnumerator Timer()
+    private IEnumerator Timer(float time)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(time);
         isFrozen = true;
     }
 

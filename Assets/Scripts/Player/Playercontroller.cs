@@ -27,7 +27,6 @@ public class Playercontroller : MonoBehaviour
     private float knockBackCounter;
 
     public GameObject lightHitbox, heavyHitbox;
-    private float attackDuration = 0.25f;
     private float attackCooldown;
 
     public static Playercontroller sharedInstance;
@@ -61,14 +60,26 @@ public class Playercontroller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && isLeft == false && attackCooldown <= 0)
         {
-            Instantiate(lightHitbox, new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = attackDuration;
+            Instantiate(lightHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = 0.25f;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && isLeft == true && attackCooldown <= 0)
         {
-            Instantiate(lightHitbox, new Vector3(this.transform.position.x - 1, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = attackDuration;
+            Instantiate(lightHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = 0.25f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && isLeft == false && attackCooldown <= 0)
+        {
+            Instantiate(heavyHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = 0.5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && isLeft == true && attackCooldown <= 0)
+        {
+            Instantiate(heavyHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            attackCooldown = 0.5f;
         }
 
         if (knockBackCounter <= 0)
