@@ -25,7 +25,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        updateGems();
+
     }
 
     // Update is called once per frame
@@ -68,11 +68,6 @@ public class UIController : MonoBehaviour
                 heart3.sprite = heartFull;
                 break;
         }
-    }
-
-    public void updateGems()
-    {
-        gemText.text = LevelManager.sharedInstance.gemCollected.ToString();
     }
 
     public void updateBars()

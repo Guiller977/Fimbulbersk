@@ -25,14 +25,6 @@ public class Pickups : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isCollected)
         {
-            if (isGem)
-            {
-                LevelManager.sharedInstance.gemCollected++;
-                isCollected = true;
-                Instantiate(pickupEffect, transform.position, transform.rotation);
-                UIController.sharedInstance.updateGems();
-                Destroy(gameObject);
-            }
             if (isPotion)
             {
                 if (PlayerHealthController.sharedInstance.currentHealth != PlayerHealthController.sharedInstance.maxHealth)
