@@ -61,6 +61,7 @@ public class Playercontroller : MonoBehaviour
         attackCooldown -= Time.deltaTime;
         iceAttackCD -= Time.deltaTime;
         fireAttackCD -= Time.deltaTime;
+        UIController.sharedInstance.updateBars();
         //Ligero
         if (Input.GetKeyDown(KeyCode.E) && isLeft == false && attackCooldown <= 0)
         {

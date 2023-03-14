@@ -9,9 +9,9 @@ public class UIController : MonoBehaviour
 {
     public TextMeshProUGUI gemText;
 
-    public Image heart1, heart2, heart3;
+    public Image heart1, heart2, heart3, fireBar, iceBar;
 
-    public Sprite heartFull, heartEmpty;
+    public Sprite heartFull, heartEmpty, fireEmpty, fireFull, iceEmpty, iceFull;
 
     public static UIController sharedInstance;
 
@@ -73,6 +73,29 @@ public class UIController : MonoBehaviour
     public void updateGems()
     {
         gemText.text = LevelManager.sharedInstance.gemCollected.ToString();
+    }
+
+    public void updateBars()
+    {
+        if (Playercontroller.sharedInstance.fireAttackCD <= 0)
+        {
+            fireBar.sprite = fireFull;
+        }
+
+        if (Playercontroller.sharedInstance.fireAttackCD > 0)
+        {
+            fireBar.sprite = fireEmpty;
+        }
+
+        if (Playercontroller.sharedInstance.iceAttackCD <= 0)
+        {
+            iceBar.sprite = iceFull;
+        }
+
+        if (Playercontroller.sharedInstance.iceAttackCD > 0)
+        {
+            iceBar.sprite = iceEmpty;
+        }
     }
 
 }
