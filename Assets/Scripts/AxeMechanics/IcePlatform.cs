@@ -5,10 +5,12 @@ using UnityEngine;
 public class IcePlatform : MonoBehaviour
 {
     public GameObject SolidIcePlatform, IcePlatformReference;
+    private SpriteRenderer theSR;
+    public Sprite baseSprite;
     // Start is called before the first frame update
     void Start()
     {
-        
+        theSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class IcePlatform : MonoBehaviour
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
             IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+            theSR.sprite = null;
         }
     }
 
@@ -38,5 +41,6 @@ public class IcePlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(IcePlatformReference);
+        theSR.sprite = baseSprite;
     }
 }

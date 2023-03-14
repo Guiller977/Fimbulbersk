@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2604654475226949896}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -2, z: 0}
-  m_LocalScale: {x: 2.5906, y: 0.3899, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4da22f5e5bc9aba4697a9535e40f74d8, type: 3}
   m_Color: {r: 0.24608402, g: 0.554533, b: 0.6603774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,14 +103,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &2604654475226949903
 MonoBehaviour:
@@ -126,3 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SolidIcePlatform: {fileID: 369218338565873758, guid: e12a2c3691b47064ca70964665a7eb40, type: 3}
   IcePlatformReference: {fileID: 0}
+  baseSprite: {fileID: 21300000, guid: 4da22f5e5bc9aba4697a9535e40f74d8, type: 3}
