@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer theSR;
     //Referencia al Animator del enemigo
     private Animator anim;
+    public float invincibleCounter;
 
     public static EnemyController sharedInstance;
 
@@ -58,6 +59,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        invincibleCounter -= Time.deltaTime;
         if (hp <= 0)
         {
             EnemyDeath.sharedInstance.KillEnemy();
@@ -206,6 +208,10 @@ public class EnemyController : MonoBehaviour
 
     public void DamageEnemy(float damage)
     {
-        hp = hp - damage;
+        if (invincibleCounter <= 0)
+        {
+            hp = hp - damage;
+            invincibleCounter = 0.2f;
+        }     
     }
 }

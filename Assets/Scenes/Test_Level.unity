@@ -681,6 +681,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1697026125738322238, guid: 8d6e1231714839f42b19a3c0ec28acd1, type: 3}
+      propertyPath: hp
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697026125738322238, guid: 8d6e1231714839f42b19a3c0ec28acd1, type: 3}
       propertyPath: stunDuration
       value: 1
       objectReference: {fileID: 0}
@@ -947,14 +951,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6898629132461322787, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-      propertyPath: heavyHitbox
-      value: 
-      objectReference: {fileID: 2349955422435326707, guid: 8079e09f83f8216469feffd9d99436c8, type: 3}
-    - target: {fileID: 6898629132461322787, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
-      propertyPath: lightHitbox
-      value: 
-      objectReference: {fileID: 2349955422435326707, guid: b7c3314e0bc71e2478b51217b51a208c, type: 3}
     - target: {fileID: 6898629132461322788, guid: 925291e7c419a4c4788faaa2f1ec2c84, type: 3}
       propertyPath: m_Name
       value: Player

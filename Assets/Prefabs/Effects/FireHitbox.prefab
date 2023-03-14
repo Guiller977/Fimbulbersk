@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2349955422435326707
+--- !u!1 &4329218305949341770
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2349955422435326708}
-  - component: {fileID: 2349955422435326709}
-  - component: {fileID: 2349955422435326706}
-  - component: {fileID: 3567477326080285444}
-  - component: {fileID: 5678795580322794130}
-  - component: {fileID: 648480751}
+  - component: {fileID: 4329218305949341773}
+  - component: {fileID: 4329218305949341772}
+  - component: {fileID: 4329218305949341771}
+  - component: {fileID: 3245679878359398845}
+  - component: {fileID: 5928957448869832747}
+  - component: {fileID: 2056105560324908374}
   m_Layer: 7
-  m_Name: LightHitbox
-  m_TagString: LightHitbox
+  m_Name: FireHitbox
+  m_TagString: FireHitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2349955422435326708
+--- !u!4 &4329218305949341773
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.2844, y: -0.3689, z: 0}
-  m_LocalScale: {x: 1.7506311, y: 1.5196451, z: 1}
+  m_LocalPosition: {x: -7.7272, y: 1.4115, z: 0}
+  m_LocalScale: {x: 6.6357784, y: 5.0804124, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2349955422435326709
+--- !u!212 &4329218305949341772
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.6392157}
+  m_Color: {r: 1, g: 0.040395662, b: 0, a: 0.48235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2349955422435326706
+--- !u!61 &4329218305949341771
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -114,44 +114,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3567477326080285444
+--- !u!114 &3245679878359398845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd81095bc56555b4ea2f5d1271725839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.25
---- !u!114 &5678795580322794130
+  lifeTime: 1
+--- !u!114 &5928957448869832747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0e0d2c7a7823da4986ace183121080d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &648480751
+--- !u!114 &2056105560324908374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349955422435326707}
+  m_GameObject: {fileID: 4329218305949341770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f381fd2d02c136745875224ba3a41c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  stun: 0.2
+  damage: 20
+  stun: 0.8
   canFreeze: 0
-  canBurn: 0
+  canBurn: 1

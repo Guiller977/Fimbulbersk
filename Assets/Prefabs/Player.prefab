@@ -256,6 +256,7 @@ MonoBehaviour:
   moveSpeed: 8
   theRB: {fileID: 6898629132461322790}
   jumpForce: 15
+  isGrounded: 0
   isHurt: 0
   groundCheckPoint: {fileID: 6898629132718390540}
   whatIsGround:
@@ -265,6 +266,12 @@ MonoBehaviour:
   dashingPower: 24
   knockBackLength: 0
   knockBackForce: 0
+  lightHitbox: {fileID: 2349955422435326707, guid: b7c3314e0bc71e2478b51217b51a208c, type: 3}
+  heavyHitbox: {fileID: 2349955422435326707, guid: 8079e09f83f8216469feffd9d99436c8, type: 3}
+  fireHitbox: {fileID: 4329218305949341770, guid: e95a7c933b636ab4b840ef929a74ef25, type: 3}
+  iceHitbox: {fileID: 33537891531403570, guid: 8929542e568f1cc439f7d2015bc77bb8, type: 3}
+  attackCooldown: 0
+  specialAttackCD: 0
 --- !u!95 &6898629132461322786
 Animator:
   serializedVersion: 4
@@ -305,6 +312,7 @@ MonoBehaviour:
   fireAxeReference: {fileID: 0}
   iceCanBeThrown: 0
   fireCanBeThrown: 0
+  damage: 0
 --- !u!114 &1436139531
 MonoBehaviour:
   m_ObjectHideFlags: 0
