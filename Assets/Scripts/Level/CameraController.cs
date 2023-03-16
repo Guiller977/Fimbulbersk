@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform target;
 
-    public Transform farBackground, middleBackground;
+    public Transform middleBackground;
 
     public float minHeight, maxHeight; 
 
@@ -34,8 +34,8 @@ public class CameraController : MonoBehaviour
         float amountToMoveX = transform.position.x - lastXPos;
         float amountToMoveY = transform.position.y - lastYPos;
         
-        farBackground.position = farBackground.position + new Vector3(amountToMoveX, amountToMoveY,0f);
-        middleBackground.position = middleBackground.position + new Vector3(amountToMoveX * 0.5f, amountToMoveY * 0.5f, 0f);
+        //farBackground.position = farBackground.position + new Vector3(amountToMoveX, amountToMoveY,0f);
+        middleBackground.position = middleBackground.position + new Vector3(amountToMoveX * 0.3f, amountToMoveY * 0.3f, 0f);
 
         lastXPos = transform.position.x;
         lastYPos = transform.position.y;

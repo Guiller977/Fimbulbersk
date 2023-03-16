@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391637846146282014}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2189096799906239090}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &3479446551085737761
 CircleCollider2D:
@@ -92,15 +92,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 599bb51c6d72aae4f9ab0e0dc81c3996, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.125, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7659550397912330074
@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae59e39e36a661e4ca1c1766f86e20dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cpOn: {fileID: 16866198, guid: 1fbe6425608c4f748825689a4d56227c, type: 3}
-  cpOff: {fileID: -2092239852, guid: 1fbe6425608c4f748825689a4d56227c, type: 3}
+  cpOn: {fileID: 21300000, guid: 599bb51c6d72aae4f9ab0e0dc81c3996, type: 3}
+  cpOff: {fileID: 21300000, guid: 0de9a52a86712d344adedb2493bb65d1, type: 3}
 --- !u!1 &2801228617609033917
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6759183882324698542
@@ -273,7 +273,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1863434581
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2092239852, guid: 1fbe6425608c4f748825689a4d56227c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -283,6 +283,6 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
