@@ -38,7 +38,7 @@ public class HurtEnemy : MonoBehaviour
         else if (EnemyController.sharedInstance.isFrozen == false)
         {
             EnemyController.sharedInstance.DamageEnemy(damage);
-            
+            StartCoroutine(Stun());
             if (canFreeze == true)
             {
                 EnemyController.sharedInstance.isFrozen = true;
@@ -47,7 +47,6 @@ public class HurtEnemy : MonoBehaviour
             if (canBurn == true)
             {
                 EnemyController.sharedInstance.isOnFire = true;
-                StartCoroutine(Stun());
             }
         }
     }

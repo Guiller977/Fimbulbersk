@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697026125236691360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697026125686851464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 1697026125738322233}
   - component: {fileID: 592251040}
   - component: {fileID: 592251041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -164,13 +164,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveSpeerAux: 0
-  hp: 30
+  hp: 50
   isFrozen: 0
   isOnFire: 0
   leftPoint: {fileID: 1697026125686851464}
   rightPoint: {fileID: 1697026125236691360}
   moveTime: 3.75
   waitTime: 1
+  invincibleCounter: 0
 --- !u!95 &1697026125738322239
 Animator:
   serializedVersion: 4
@@ -253,7 +254,7 @@ GameObject:
   - component: {fileID: 1697026125789100196}
   - component: {fileID: 1697026125789100123}
   - component: {fileID: 1697026125789100197}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
