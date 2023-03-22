@@ -19,9 +19,10 @@ public class EnemyDeath : MonoBehaviour
     //Método para la muerte del enemigo
     public void KillEnemy()
     {
+        Debug.Log("sa matao");
         //Desactivamos al enemigo padre
-        transform.gameObject.SetActive(false);
+        this.transform.gameObject.SetActive(false);
         //Instanciamos el efecto de muerte del enemigo en la posición del primer hijo
-        Instantiate(deathEffect, transform.GetChild(0).position, transform.GetChild(0).rotation);
+        //Instantiate(deathEffect, transform.GetChild(0).position, transform.GetChild(0).rotation);
     }
 }

@@ -74,8 +74,8 @@ GameObject:
   - component: {fileID: 1697026125738322236}
   - component: {fileID: 1697026125738322237}
   - component: {fileID: 1697026125738322238}
-  - component: {fileID: 1697026125738322239}
   - component: {fileID: 1697026125738322233}
+  - component: {fileID: 1697026125738322239}
   - component: {fileID: 592251040}
   - component: {fileID: 592251041}
   m_Layer: 7
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveSpeerAux: 0
-  hp: 50
+  hp: 25
   isFrozen: 0
   isOnFire: 0
   leftPoint: {fileID: 1697026125686851464}
@@ -172,6 +172,20 @@ MonoBehaviour:
   moveTime: 3.75
   waitTime: 1
   invincibleCounter: 0
+  a: {fileID: 8118575306062961447, guid: db229f16683d1214099915f6e558bbe9, type: 3}
+--- !u!114 &1697026125738322233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697026125738322226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bcc52ff60bdf442905a3720c09f138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 6498801654482391561, guid: 65b5dc12771b5524ea072c04337be486, type: 3}
 --- !u!95 &1697026125738322239
 Animator:
   serializedVersion: 4
@@ -192,19 +206,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1697026125738322233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697026125738322226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6bcc52ff60bdf442905a3720c09f138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 6498801654482391561, guid: 65b5dc12771b5524ea072c04337be486, type: 3}
 --- !u!61 &592251040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -317,7 +318,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1405741480, guid: 0a2282fd49293244895f81504081af82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2601aa70a1aaa342b60682a4cb26937, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -345,7 +346,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.75, y: 4}
+    oldSize: {x: 2, y: 4}
     newSize: {x: 3.75, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

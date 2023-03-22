@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
         Instantiate(death_Effect, Playercontroller.sharedInstance.transform.position, Playercontroller.sharedInstance.transform.rotation);
         yield return new WaitForSeconds(timeToRespawn);
         Playercontroller.sharedInstance.gameObject.SetActive(true);
+        Playercontroller.sharedInstance.canDash = true;
         Playercontroller.sharedInstance.transform.position = CheckpointController.sharedInstance.spawnPoint;
         PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
         UIController.sharedInstance.UpdateHealthDisplay();

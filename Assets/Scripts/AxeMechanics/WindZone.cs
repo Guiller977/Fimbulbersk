@@ -21,7 +21,7 @@ public class WindZone : MonoBehaviour
         if (collision.CompareTag("FireAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            windZoneReference = Instantiate(windZone, collision.transform.position + new Vector3(0f, 0.5f, 0f), transform.rotation);
+            windZoneReference = Instantiate(windZone, collision.transform.position + new Vector3(0f, 2f, 0f), transform.rotation);
         }
     }
 

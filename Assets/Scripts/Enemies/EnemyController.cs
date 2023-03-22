@@ -27,6 +27,8 @@ public class EnemyController : MonoBehaviour
     private Animator anim;
     public float invincibleCounter;
 
+    public GameObject a;
+
     public static EnemyController sharedInstance;
 
     private void Awake()
@@ -62,7 +64,9 @@ public class EnemyController : MonoBehaviour
         invincibleCounter -= Time.deltaTime;
         if (hp <= 0)
         {
-            EnemyDeath.sharedInstance.KillEnemy();
+            Instantiate(a, transform.position, transform.rotation);
+            Debug.Log("muere");
+            this.gameObject.SetActive(false);
         }
 
         if (isOnFire == true)
@@ -148,33 +152,63 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        //else if (collision.CompareTag("LightHitbox"))
-        //{
+        else if (collision.CompareTag("LightHitbox"))
+        {
 
-        //    if (isFrozen == true)
-        //    {
-        //        DamageEnemy(10);
-        //        isFrozen = false;
-        //    }
-        //    else
-        //    {
-        //        DamageEnemy(5);
-        //    }
-        //}
+            if (isFrozen == true)
+            {
+                DamageEnemy(10);
+                isFrozen = false;
+            }
+            else
+            {
+                DamageEnemy(5);
+            }
+        }
 
-        //else if (collision.CompareTag("HeavyHitbox"))
-        //{
+        else if (collision.CompareTag("HeavyHitbox"))
+        {
 
-        //    if (isFrozen == true)
-        //    {
-        //        DamageEnemy(20);
-        //        isFrozen = false;
-        //    }
-        //    else
-        //    {
-        //        DamageEnemy(10);
-        //    }
-        //}
+            if (isFrozen == true)
+            {
+                DamageEnemy(20);
+                isFrozen = false;
+            }
+            else
+            {
+                DamageEnemy(10);
+            }
+        }
+
+        else if (collision.CompareTag("FireHitbox"))
+        {
+
+            if (isFrozen == true)
+            {
+                DamageEnemy(30);
+                isFrozen = false;
+                isOnFire = true;
+            }
+            else
+            {
+                DamageEnemy(15);
+                isOnFire = true;
+            }
+        }
+
+        else if (collision.CompareTag("IceHitbox"))
+        {
+            if (isFrozen == true)
+            {
+                DamageEnemy(30);
+                isFrozen = true;
+            }
+            else
+            {
+                DamageEnemy(15);
+                isFrozen = true;
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

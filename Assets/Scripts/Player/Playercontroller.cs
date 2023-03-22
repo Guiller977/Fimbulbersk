@@ -17,7 +17,7 @@ public class Playercontroller : MonoBehaviour
     private SpriteRenderer theSR;
     public bool isLeft;
 
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     public float dashingPower = 24f;
     private float dashingTime = 0.2f;
@@ -144,12 +144,12 @@ public class Playercontroller : MonoBehaviour
             }
             if (theRB.velocity.x < 0)
             {
-                theSR.flipX = false;
+                theSR.flipX = true;
                 isLeft = true;
             }
             else if (theRB.velocity.x > 0)
             {
-                theSR.flipX = true;
+                theSR.flipX = false;
                 isLeft = false;
             }
 
