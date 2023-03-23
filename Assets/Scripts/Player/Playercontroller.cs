@@ -47,7 +47,7 @@ public class Playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveSpeed > 18)
+        if (moveSpeed > 25)
         {
             moveSpeed = 8;
         }
