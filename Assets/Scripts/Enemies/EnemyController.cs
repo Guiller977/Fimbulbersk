@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float hp;
     public bool isFrozen;
     public bool isOnFire;
+    public bool inmuneToIce, inmuneToFire;
 
     //Posiciones más a la izquierda y más a la derecha que se va a poder mover el enemigo
     public Transform leftPoint, rightPoint;
@@ -121,7 +122,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("IceAxe"))
+        if (collision.CompareTag("IceAxe") && !inmuneToIce)
         {
             if (isFrozen == true)
             {
@@ -136,7 +137,7 @@ public class EnemyController : MonoBehaviour
             }
         }
         
-        else if (collision.CompareTag("FireAxe"))
+        else if (collision.CompareTag("FireAxe") && !inmuneToFire)
         {
             if (isFrozen == true)
             {
@@ -180,7 +181,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        else if (collision.CompareTag("FireHitbox"))
+        else if (collision.CompareTag("FireHitbox") && !inmuneToFire)
         {
 
             if (isFrozen == true)
@@ -196,7 +197,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        else if (collision.CompareTag("IceHitbox"))
+        else if (collision.CompareTag("IceHitbox") && !inmuneToIce)
         {
             if (isFrozen == true)
             {

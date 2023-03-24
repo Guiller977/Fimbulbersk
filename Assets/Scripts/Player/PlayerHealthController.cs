@@ -33,13 +33,12 @@ public class PlayerHealthController : MonoBehaviour
         if (invincibleCounter > 0)
         {
             Playercontroller.sharedInstance.isHurt = true;
-            invincibleCounter -= Time.deltaTime;
-
-            if (invincibleCounter <= 0)
-            {
-                theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, 1f);
-                Playercontroller.sharedInstance.isHurt = false;
-            }
+            invincibleCounter -= Time.deltaTime;           
+        }
+        if (invincibleCounter <= 0)
+        {
+            theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, 1f);
+            Playercontroller.sharedInstance.isHurt = false;
         }
     }
 
