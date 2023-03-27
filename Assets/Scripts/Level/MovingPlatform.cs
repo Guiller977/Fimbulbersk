@@ -5,40 +5,27 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     public float movSpeed;
-    private Rigidbody2D theRB;
-    private SpriteRenderer theSR;
-    private bool movingRight;
-
-    public Transform leftPoint, rightPoint;
+    public int currentPoint;
+    public Transform platform;
+    public Transform[] points;
     // Start is called before the first frame update
     void Start()
     {
-        theRB = GetComponent<Rigidbody2D>();
-        theSR = GetComponentInChildren<SpriteRenderer>();
 
-        leftPoint.parent = null;
-        rightPoint.parent = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (movingRight)
-        {
-            theRB.velocity = new Vector2(movSpeed, 0);
+        platform.position = Vector3.MoveTowards(platform.position, points[currentPoint].position, movSpeed);
 
-            if (transform.position.x > rightPoint.position.x)
-            {
-                movingRight = false;
-            }
-        }
-        else
+        if (Vector3.Distance(platform.position, points[currentPoint].position) < 0.01f)
         {
-            theRB.velocity = new Vector2(-movSpeed, 0);
+            currentPoint++;
 
-            if (transform.position.x < leftPoint.position.x)
+            if (currentPoint >= points.Length)
             {
-                movingRight = true;
+                currentPoint = 0;
             }
         }
     }
