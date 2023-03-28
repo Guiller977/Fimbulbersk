@@ -20,7 +20,7 @@ public class FreezeGround : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Playercontroller.sharedInstance.moveSpeed += 15;
+            Playercontroller.sharedInstance.moveSpeed = 20;
         }
     }
 
@@ -35,6 +35,6 @@ public class FreezeGround : MonoBehaviour
     private IEnumerator Timer()
     {
         yield return new WaitForSeconds(0.5f);
-        Playercontroller.sharedInstance.moveSpeed -= 15;
+        Playercontroller.sharedInstance.moveSpeed = 8;
     }
 }
