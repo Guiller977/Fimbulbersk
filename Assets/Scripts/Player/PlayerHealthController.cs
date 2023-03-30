@@ -23,6 +23,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        UIController.sharedInstance.UpdateHealthDisplay();
 
         theSR = GetComponent<SpriteRenderer>();
     }
