@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1403045919
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 524a8e79300aa6d4a9aed5a2c0c98551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1403045919
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 524a8e79300aa6d4a9aed5a2c0c98551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -239,7 +239,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1403045919
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 524a8e79300aa6d4a9aed5a2c0c98551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5905582001016366552}
   - component: {fileID: 1528206287}
-  - component: {fileID: 1528206288}
+  - component: {fileID: 7645870560815551849}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -286,7 +286,7 @@ Transform:
   - {fileID: 5905581999826595941}
   - {fileID: 5905581999794549531}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1528206287
 BoxCollider2D:
@@ -314,7 +314,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &1528206288
+--- !u!114 &7645870560815551849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,6 +323,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5905582001016366555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d75d36f6908647458b89f21e93fd4de, type: 3}
+  m_Script: {fileID: 11500000, guid: bd809eed31c6f3949b2f396bcb54ee8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
