@@ -10,6 +10,7 @@ public class FlyingEnemyController : MonoBehaviour
     public float moveSpeed;
     //Variable para conocer en que punto del recorrido se encuentra el enemigo
     public int currentPoint;
+    public GameObject heart;
 
     public float hp;
     public bool isFrozen;
@@ -47,6 +48,18 @@ public class FlyingEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        invincibleCounter -= Time.deltaTime;
+        if (hp <= 0)
+        {
+            Instantiate(heart, transform.position, transform.rotation);
+            Debug.Log("muere");
+            this.gameObject.SetActive(false);
+        }
+
+        if (isOnFire == true)
+        {
+            hp = hp - Time.deltaTime;
+        }
         //Si el contador de tiempo entre ataques aún está lleno
         if (attackCounter > 0)
         {
