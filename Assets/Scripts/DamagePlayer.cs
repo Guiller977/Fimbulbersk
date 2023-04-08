@@ -21,6 +21,7 @@ public class DamagePlayer : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerHealthController>().DealWithDamage();
+            collision.GetComponent<Playercontroller>().knockBackLength = 0.25f;
         }
     }
 }

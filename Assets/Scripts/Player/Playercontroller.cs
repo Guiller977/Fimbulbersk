@@ -123,7 +123,7 @@ public class Playercontroller : MonoBehaviour
         if (knockBackCounter <= 0)
         {
             theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 2f, whatIsGround); //OverlapCircle(Punto para generar circulo, radio, layer a detectar.)            
+            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.25f, whatIsGround); //OverlapCircle(Punto para generar circulo, radio, layer a detectar.)            
             if (Input.GetButtonDown("Jump"))
             {
                 if (isGrounded)
@@ -131,7 +131,6 @@ public class Playercontroller : MonoBehaviour
                     theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
                     //Cambiar esto si se incluye doble salto
                     canDoubleJump = false;
-
                 }
             }
             else
@@ -163,11 +162,11 @@ public class Playercontroller : MonoBehaviour
             knockBackCounter -= Time.deltaTime;
             if (!theSR.flipX)
             {
-                theRB.velocity = new Vector2(knockBackForce, theRB.velocity.y);
+                theRB.velocity = new Vector2(-knockBackForce, knockBackForce - 5);
             }
             else
             {
-                theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
+                theRB.velocity = new Vector2(knockBackForce, knockBackForce - 5);
             }
         }
         anim.SetFloat("movSpeed", Mathf.Abs(theRB.velocity.x));

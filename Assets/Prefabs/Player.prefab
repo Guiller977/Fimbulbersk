@@ -238,8 +238,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.35}
-  m_Size: {x: 1, y: 2.3}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.54, y: 3.39}
   m_Direction: 0
 --- !u!114 &6898629132461322787
 MonoBehaviour:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   theRB: {fileID: 6898629132461322790}
-  jumpForce: 10
+  jumpForce: 13
   isGrounded: 0
   isHurt: 0
   groundCheckPoint: {fileID: 6898629132718390540}
@@ -266,7 +266,7 @@ MonoBehaviour:
   canDash: 1
   dashingPower: 24
   knockBackLength: 0
-  knockBackForce: 0
+  knockBackForce: 15
   lightHitbox: {fileID: 2349955422435326707, guid: b7c3314e0bc71e2478b51217b51a208c, type: 3}
   heavyHitbox: {fileID: 2349955422435326707, guid: 8079e09f83f8216469feffd9d99436c8, type: 3}
   fireHitbox: {fileID: 4329218305949341770, guid: e95a7c933b636ab4b840ef929a74ef25, type: 3}
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 3
-  invincibleLength: 0
+  invincibleLength: 0.5
   invincibleCounter: 0
 --- !u!1 &6898629132718390541
 GameObject:
