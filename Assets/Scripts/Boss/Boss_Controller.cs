@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Boss_Controller : MonoBehaviour
 {
-    private float cd, cdDuration = 3;
-    public float hp, maxhp = 200;
+    private float cd, cdDuration = 2;
+    public int hp, maxhp = 200;
 
-    private GameObject shockwave, iceRay;
+    public GameObject shockwave, iceRay;
     private bool inmuneToFire, inmuneToIce;
 
-    public Transform top, mid, bottom;
+    public Transform top, mid, bottom, shockwaveTransform;
     public int nextpos;
+
+    public Health_Bar healthbar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = maxhp;
+        healthbar.SetMaxHealth(maxhp);
     }
 
     // Update is called once per frame
@@ -64,7 +67,7 @@ public class Boss_Controller : MonoBehaviour
             inmuneToFire = true;
             if (cd < 0)
             {
-                Instantiate(shockwave, transform.position, transform.rotation);
+                Instantiate(shockwave, shockwaveTransform.position, transform.rotation);
                 cd = cdDuration;
             }
         }
@@ -75,27 +78,29 @@ public class Boss_Controller : MonoBehaviour
         if (collision.CompareTag("IceAxe") && !inmuneToIce)
         {
             hp = hp - 5;
+            healthbar.SetHealth(hp);
         }
 
         else if (collision.CompareTag("FireAxe") && !inmuneToFire)
         {
             hp = hp - 5;
+            healthbar.SetHealth(hp);
         }
 
-        else if (collision.CompareTag("LightHitbox"))
-        {
-            hp = hp - 5;
-        }
+        //else if (collision.CompareTag("LightHitbox"))
+        //{
+        //    hp = hp - 5;
+        //}
 
-        else if (collision.CompareTag("HeavyHitbox"))
-        {
-            hp = hp - 10;
-        }
+        //else if (collision.CompareTag("HeavyHitbox"))
+        //{
+        //    hp = hp - 10;
+        //}
 
-        else if (collision.CompareTag("FireHitbox") && !inmuneToFire)
-        {
-            hp = hp - 20;
-        }
+        //else if (collision.CompareTag("FireHitbox") && !inmuneToFire)
+        //{
+        //    hp = hp - 20;
+        //}
 
         else if (collision.CompareTag("IceHitbox") && !inmuneToIce)
         {
