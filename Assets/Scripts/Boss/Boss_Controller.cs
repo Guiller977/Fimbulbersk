@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Boss_Controller : MonoBehaviour
 {
-    private float cd, cdDuration = 2;
+    private float cd, cdDuration = 2, iceTimer, iceTimerDuration = 1;
     public int hp, maxhp = 200;
 
-    public GameObject shockwave, iceRay;
+    public GameObject shockwave, iceRay, preIceRay;
     private bool inmuneToFire, inmuneToIce;
 
     public Transform top, mid, bottom, shockwaveTransform;
@@ -22,7 +22,7 @@ public class Boss_Controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         cd -= Time.deltaTime;
         //Muerte
@@ -38,26 +38,25 @@ public class Boss_Controller : MonoBehaviour
             inmuneToFire = false;
             if (cd < 0)
             {
-                nextpos = Random.Range(1, 3);
+                nextpos = Random.Range(1, 4);
 
                 if (nextpos == 1)
                 {
-                    Instantiate(iceRay, top.position, transform.rotation);
-                    cd = cdDuration;
+                    StartCoroutine(IceRayTimer1());
+                    cd = 5;
                 }
 
                 if (nextpos == 2)
                 {
-                    Instantiate(iceRay, mid.position, transform.rotation);
-                    cd = cdDuration;
+                    StartCoroutine(IceRayTimer2());
+                    cd = 5;
                 }
 
                 if (nextpos == 3)
                 {
-                    Instantiate(iceRay, bottom.position, transform.rotation);
-                    cd = cdDuration;
+                    StartCoroutine(IceRayTimer3());
+                    cd = 5;
                 }
-
             }
         }
 
@@ -106,5 +105,32 @@ public class Boss_Controller : MonoBehaviour
         {
             hp = hp - 20;
         }
+    }
+
+    private IEnumerator IceRayTimer1()
+    {
+        Instantiate(preIceRay, top.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Instantiate(iceRay, top.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        StopCoroutine(IceRayTimer1());
+    }
+
+    private IEnumerator IceRayTimer2()
+    {
+        Instantiate(preIceRay, mid.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Instantiate(iceRay, mid.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        StopCoroutine(IceRayTimer2());
+    }
+
+    private IEnumerator IceRayTimer3()
+    {
+        Instantiate(preIceRay, bottom.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        Instantiate(iceRay, bottom.position, transform.rotation);
+        yield return new WaitForSeconds(2f);
+        StopCoroutine(IceRayTimer3());
     }
 }
