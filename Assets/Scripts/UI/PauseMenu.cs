@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; //Para cambiar entre escenas
 public class PauseMenu : MonoBehaviour
 {
     //Variables para saber las escenas a las que queremos ir desde este menú
-    public string levelSelect, mainMenu;
+    public string mainMenu;
     //Referencia al GO del menú de pausa
     public GameObject pauseMenu;
     //Variable para conocer cuando el juego está pausado o no
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         //Si pulsamos el botón de Intro
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             //Pausamos el juego
             PauseUnpause();
@@ -55,16 +55,6 @@ public class PauseMenu : MonoBehaviour
         }
 
     }
-
-    //Método para el botón LevelSelect
-    public void LevelSelect()
-    {
-        //Para ir a la escena LevelSelect
-        SceneManager.LoadScene(levelSelect);
-        //Reanudamos realmente el tiempo de juego
-        Time.timeScale = 1f;
-    }
-
     //Método para el botón MainMenu
     public void MainMenu()
     {

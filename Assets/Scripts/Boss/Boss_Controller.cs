@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss_Controller : MonoBehaviour
 {
-    private float cd, cdDuration = 2, iceTimer, iceTimerDuration = 1;
+    private float cd, cdDuration = 2;
     public int hp, maxhp = 200;
 
     public GameObject shockwave, iceRay, preIceRay;

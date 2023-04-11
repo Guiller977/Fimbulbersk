@@ -29,7 +29,13 @@ public class Playercontroller : MonoBehaviour
     public GameObject lightHitbox, heavyHitbox, fireHitbox, iceHitbox;
     public float attackCooldown, iceAttackCD, fireAttackCD;
 
+    public bool stopInput;
+
     public static Playercontroller sharedInstance;
+
+    public bool canInteract = false;
+
+    public PauseMenu reference;
     void Awake()
     {
         if (sharedInstance == null)
@@ -47,126 +53,129 @@ public class Playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveSpeed > 25)
+        if (!reference.isPaused && !stopInput)
         {
-            moveSpeed = 8;
-        }
-        if (isDashing)
-        {
-            return;
-        }
-
-        //ATAQUES
-
-        attackCooldown -= Time.deltaTime;
-        iceAttackCD -= Time.deltaTime;
-        fireAttackCD -= Time.deltaTime;
-        UIController.sharedInstance.updateBars();
-        //Ligero
-        if (Input.GetKeyDown(KeyCode.E) && isLeft == false && attackCooldown <= 0)
-        {
-            Instantiate(lightHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 0.25f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && isLeft == true && attackCooldown <= 0)
-        {
-            Instantiate(lightHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 0.25f;
-        }
-
-        //Pesado
-        if (Input.GetKeyDown(KeyCode.Q) && isLeft == false && attackCooldown <= 0)
-        {
-            Instantiate(heavyHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 0.5f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q) && isLeft == true && attackCooldown <= 0)
-        {
-            Instantiate(heavyHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 0.5f;
-        }
-
-        //Hielo
-        if (Input.GetKeyDown(KeyCode.F) && isLeft == false && attackCooldown <= 0 && iceAttackCD <= 0)
-        {
-            Instantiate(iceHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 2f;
-            iceAttackCD = 30f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F) && isLeft == true && attackCooldown <= 0 && iceAttackCD <= 0)
-        {
-            Instantiate(iceHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 2f;
-            iceAttackCD = 30f;
-        }
-
-        //Fire
-        if (Input.GetKeyDown(KeyCode.R) && isLeft == false && attackCooldown <= 0 && fireAttackCD <= 0)
-        {
-            Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 2f;
-            fireAttackCD = 30f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && isLeft == true && attackCooldown <= 0 && fireAttackCD <= 0)
-        {
-            Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-            attackCooldown = 2f;
-            fireAttackCD = 30f;
-        }
-
-        //MOVIMIENTO
-
-        if (knockBackCounter <= 0)
-        {
-            theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.25f, whatIsGround); //OverlapCircle(Punto para generar circulo, radio, layer a detectar.)            
-            if (Input.GetButtonDown("Jump"))
+            if (moveSpeed > 25)
             {
-                if (isGrounded)
+                moveSpeed = 8;
+            }
+            if (isDashing)
+            {
+                return;
+            }
+
+            //ATAQUES
+
+            attackCooldown -= Time.deltaTime;
+            iceAttackCD -= Time.deltaTime;
+            fireAttackCD -= Time.deltaTime;
+            UIController.sharedInstance.updateBars();
+            //Ligero
+            //if (Input.GetKeyDown(KeyCode.E) && isLeft == false && attackCooldown <= 0)
+            //{
+            //    Instantiate(lightHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 0.25f;
+            //}
+
+            //if (Input.GetKeyDown(KeyCode.E) && isLeft == true && attackCooldown <= 0)
+            //{
+            //    Instantiate(lightHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 0.25f;
+            //}
+
+            ////Pesado
+            //if (Input.GetKeyDown(KeyCode.Q) && isLeft == false && attackCooldown <= 0)
+            //{
+            //    Instantiate(heavyHitbox, new Vector3(this.transform.position.x + 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 0.5f;
+            //}
+
+            //if (Input.GetKeyDown(KeyCode.Q) && isLeft == true && attackCooldown <= 0)
+            //{
+            //    Instantiate(heavyHitbox, new Vector3(this.transform.position.x - 1.5f, this.transform.position.y, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 0.5f;
+            //}
+
+            //Hielo
+            if (Input.GetKeyDown(KeyCode.F) && isLeft == false && attackCooldown <= 0 && iceAttackCD <= 0)
+            {
+                Instantiate(iceHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                attackCooldown = 2f;
+                iceAttackCD = 30f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.F) && isLeft == true && attackCooldown <= 0 && iceAttackCD <= 0)
+            {
+                Instantiate(iceHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                attackCooldown = 2f;
+                iceAttackCD = 30f;
+            }
+
+            //Fire
+            if (Input.GetKeyDown(KeyCode.R) && isLeft == false && attackCooldown <= 0 && fireAttackCD <= 0)
+            {
+                Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                attackCooldown = 2f;
+                fireAttackCD = 30f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && isLeft == true && attackCooldown <= 0 && fireAttackCD <= 0)
+            {
+                Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                attackCooldown = 2f;
+                fireAttackCD = 30f;
+            }
+
+            //MOVIMIENTO
+
+            if (knockBackCounter <= 0)
+            {
+                theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
+                isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.25f, whatIsGround); //OverlapCircle(Punto para generar circulo, radio, layer a detectar.)            
+                if (Input.GetButtonDown("Jump"))
                 {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    //Cambiar esto si se incluye doble salto
-                    canDoubleJump = false;
+                    if (isGrounded)
+                    {
+                        theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                        //Cambiar esto si se incluye doble salto
+                        canDoubleJump = false;
+                    }
+                }
+                else
+                {
+                    if (canDoubleJump)
+                    {
+                        theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                        canDoubleJump = false;
+                    }
+                }
+                if (theRB.velocity.x < 0)
+                {
+                    theSR.flipX = true;
+                    isLeft = true;
+                }
+                else if (theRB.velocity.x > 0)
+                {
+                    theSR.flipX = false;
+                    isLeft = false;
+                }
+
+                if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+                {
+                    StartCoroutine(Dash());
                 }
             }
             else
             {
-                if (canDoubleJump)
+                knockBackCounter -= Time.deltaTime;
+                if (!theSR.flipX)
                 {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    canDoubleJump = false;
+                    theRB.velocity = new Vector2(-knockBackForce, knockBackForce - 5);
                 }
-            }
-            if (theRB.velocity.x < 0)
-            {
-                theSR.flipX = true;
-                isLeft = true;
-            }
-            else if (theRB.velocity.x > 0)
-            {
-                theSR.flipX = false;
-                isLeft = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-            {
-                StartCoroutine(Dash());
-            }
-        }
-        else
-        {
-            knockBackCounter -= Time.deltaTime;
-            if (!theSR.flipX)
-            {
-                theRB.velocity = new Vector2(-knockBackForce, knockBackForce - 5);
-            }
-            else
-            {
-                theRB.velocity = new Vector2(knockBackForce, knockBackForce - 5);
+                else
+                {
+                    theRB.velocity = new Vector2(knockBackForce, knockBackForce - 5);
+                }
             }
         }
         anim.SetFloat("movSpeed", Mathf.Abs(theRB.velocity.x));
