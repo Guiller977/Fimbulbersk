@@ -11,13 +11,13 @@ public class Boss_Controller : MonoBehaviour
     private bool inmuneToFire, inmuneToIce;
 
     public Transform top, mid, bottom, shockwaveTransform;
-    public int nextpos;
+    public int nextpos, nextpos2;
 
     public Health_Bar healthbar;
     // Start is called before the first frame update
     void Start()
     {
-        cd = 5f;
+        cd = 1.5f;
         hp = maxhp;
         healthbar.SetMaxHealth(maxhp);
     }
@@ -33,7 +33,7 @@ public class Boss_Controller : MonoBehaviour
         }
 
         //Segunda fase
-        if (hp < (maxhp / 2) && hp > 0)
+        if (hp < ((maxhp / 2) + 2) && hp > 0)
         {
             plat1.SetActive(true);
             plat2.SetActive(true);
@@ -42,23 +42,33 @@ public class Boss_Controller : MonoBehaviour
             if (cd < 0)
             {
                 nextpos = Random.Range(1, 4);
+                nextpos2 = Random.Range(1, 4);
 
-                if (nextpos == 1)
+                if (nextpos == nextpos2)
                 {
-                    StartCoroutine(IceRayTimer1());
-                    cd = 5;
+                    nextpos = Random.Range(1, 4);
+                    nextpos2 = Random.Range(1, 4);
                 }
 
-                if (nextpos == 2)
+                else if (nextpos != nextpos2)
                 {
-                    StartCoroutine(IceRayTimer2());
-                    cd = 5;
-                }
+                    if (nextpos == 1 || nextpos2 == 1)
+                    {
+                        StartCoroutine(IceRayTimer1());
+                        cd = 5;
+                    }
 
-                if (nextpos == 3)
-                {
-                    StartCoroutine(IceRayTimer3());
-                    cd = 5;
+                    if (nextpos == 2 || nextpos2 == 2)
+                    {
+                        StartCoroutine(IceRayTimer2());
+                        cd = 5;
+                    }
+
+                    if (nextpos == 3 || nextpos2 == 3)
+                    {
+                        StartCoroutine(IceRayTimer3());
+                        cd = 5;
+                    }
                 }
             }
         }
