@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -32,7 +33,14 @@ public class LevelManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        StartCoroutine(RespawnPlayerCo());
+        if (SceneManager.GetActiveScene().name.Equals("Boss_Fight"))
+        {
+            StartCoroutine(BossRespawnPlayer());
+        }
+        else
+        {
+            StartCoroutine(RespawnPlayerCo());
+        }
     }
 
     public IEnumerator RespawnPlayerCo()
@@ -45,6 +53,15 @@ public class LevelManager : MonoBehaviour
         Playercontroller.sharedInstance.transform.position = CheckpointController.sharedInstance.spawnPoint;
         PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
         UIController.sharedInstance.UpdateHealthDisplay();
+    }
+
+    public IEnumerator BossRespawnPlayer()
+    {
+        Playercontroller.sharedInstance.gameObject.SetActive(false);
+        Instantiate(death_Effect, Playercontroller.sharedInstance.transform.position, Playercontroller.sharedInstance.transform.rotation);
+        UIController.sharedInstance.FadeToBlack();
+        yield return new WaitForSeconds(timeToRespawn);
+        SceneManager.LoadScene("Boss_Fight");
     }
 }
 
