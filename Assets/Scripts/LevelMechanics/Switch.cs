@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Switch : MonoBehaviour
 {
     //Objeto sobre el que actúa el interruptor
     public GameObject objectToSwitch;
     //Sprites al cambiar de estado el interruptor
-    public Sprite downSprite, upSprite;
+    //public Sprite downSprite, upSprite;
     //Desactivamos al usar el interruptor
     private bool activateSwitch;
     //Referencia al panel de información
     public GameObject infoPanel;
     //Referencia al Sprite Renderer del interruptor
-    private SpriteRenderer theSR;
+    //private SpriteRenderer theSR;
 
     // Start is called before the first frame update
     void Start()
     {
         //Inicializamos el Sprite Renderer del interruptor
-        theSR = GetComponent<SpriteRenderer>();
+        //theSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,26 +29,27 @@ public class Switch : MonoBehaviour
         //Si pulsamos el botón E y el jugador puede interactuar
         if (Input.GetKeyDown(KeyCode.E) && Playercontroller.sharedInstance.canInteract)
         {
-            //Si no está activo el interruptor
-            if (!activateSwitch)
-            {
-                //Desactivamos el objeto sobre el que actúa el interruptor
-                objectToSwitch.SetActive(false);
-                //El interruptor estaría activado
-                activateSwitch = true;
-                //Cambiamos el interruptor a bajado
-                theSR.sprite = downSprite;
-            }
-            //Si por el contrario está activado
-            else
-            {
-                //Activamos el objeto sobre el que actúa el interruptor
-                objectToSwitch.SetActive(true);
-                //El interruptor estaría desactivado
-                activateSwitch = false;
-                //Cambiamos el interruptor a subido
-                theSR.sprite = upSprite;
-            }
+            SceneManager.LoadScene("Boss_Fight");
+            ////Si no está activo el interruptor
+            //if (!activateSwitch)
+            //{
+            //    //Desactivamos el objeto sobre el que actúa el interruptor
+            //    objectToSwitch.SetActive(false);
+            //    //El interruptor estaría activado
+            //    activateSwitch = true;
+            //    //Cambiamos el interruptor a bajado
+            //    //theSR.sprite = downSprite;
+            //}
+            ////Si por el contrario está activado
+            //else
+            //{
+            //    //Activamos el objeto sobre el que actúa el interruptor
+            //    objectToSwitch.SetActive(true);
+            //    //El interruptor estaría desactivado
+            //    activateSwitch = false;
+            //    //Cambiamos el interruptor a subido
+            //    //theSR.sprite = upSprite;
+            //}
         }
            
     }

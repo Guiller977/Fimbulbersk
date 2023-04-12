@@ -7,7 +7,7 @@ public class Boss_Controller : MonoBehaviour
     private float cd, cdDuration = 2;
     public int hp, maxhp = 200;
 
-    public GameObject shockwave, iceRay, preIceRay;
+    public GameObject shockwave, iceRay, preIceRay, plat1, plat2;
     private bool inmuneToFire, inmuneToIce;
 
     public Transform top, mid, bottom, shockwaveTransform;
@@ -17,6 +17,7 @@ public class Boss_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cd = 5f;
         hp = maxhp;
         healthbar.SetMaxHealth(maxhp);
     }
@@ -34,6 +35,8 @@ public class Boss_Controller : MonoBehaviour
         //Segunda fase
         if (hp < (maxhp / 2) && hp > 0)
         {
+            plat1.SetActive(true);
+            plat2.SetActive(true);
             inmuneToIce = true;
             inmuneToFire = false;
             if (cd < 0)

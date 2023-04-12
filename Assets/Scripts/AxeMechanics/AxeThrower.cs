@@ -20,7 +20,7 @@ public class AxeThrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Playercontroller.sharedInstance.reference == false && Playercontroller.sharedInstance.stopInput == false)
+        if (Playercontroller.sharedInstance.reference.isPaused == false)
         {
             //Lanzar hacha de hielo
             if (Input.GetKeyDown(KeyCode.Mouse0) && iceCanBeThrown)

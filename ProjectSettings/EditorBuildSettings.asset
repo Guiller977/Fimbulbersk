@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_Menu.unity
     guid: 02bedbc797ce7224081792c30c4c0981
+  - enabled: 1
+    path: Assets/Scenes/Boss_Fight.unity
+    guid: abb0377c5285b71469566531c4631cf6
   m_configObjects: {}
