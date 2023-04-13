@@ -67,6 +67,18 @@ public class Switch : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Si es el jugador el que entra en la zona del interruptor
+        if (collision.CompareTag("Player"))
+        {
+            //Mostramos el panel de información
+            infoPanel.SetActive(true);
+            //Permitimos al jugador que pueda interactuar con el objeto
+            Playercontroller.sharedInstance.canInteract = true;
+        }
+    }
+
     //Método para conocer cuando un objeto sale de la zona de Trigger
     private void OnTriggerExit2D(Collider2D collision)
     {

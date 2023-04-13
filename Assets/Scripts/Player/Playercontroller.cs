@@ -23,8 +23,8 @@ public class Playercontroller : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
-    public float knockBackLength, knockBackForce;
-    private float knockBackCounter;
+    public float knockBackLength, knockBackForce, impulseLenght, impulseForce;
+    private float knockBackCounter, impulseCounter;
 
     public GameObject lightHitbox, heavyHitbox, fireHitbox, iceHitbox;
     public float attackCooldown, iceAttackCD, fireAttackCD;
@@ -48,6 +48,7 @@ public class Playercontroller : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
+        theRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -96,7 +97,7 @@ public class Playercontroller : MonoBehaviour
             //    attackCooldown = 0.5f;
             //}
 
-            //Hielo
+            //Ice
             if (Input.GetKeyDown(KeyCode.F) && isLeft == false && attackCooldown <= 0 && iceAttackCD <= 0)
             {
                 Instantiate(iceHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
@@ -114,16 +115,16 @@ public class Playercontroller : MonoBehaviour
             //Fire
             if (Input.GetKeyDown(KeyCode.R) && isLeft == false && attackCooldown <= 0 && fireAttackCD <= 0)
             {
-                Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                //Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
                 attackCooldown = 2f;
-                fireAttackCD = 30f;
+                fireAttackCD = 1f;
             }
 
             if (Input.GetKeyDown(KeyCode.R) && isLeft == true && attackCooldown <= 0 && fireAttackCD <= 0)
             {
-                Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+                //Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
                 attackCooldown = 2f;
-                fireAttackCD = 30f;
+                fireAttackCD = 1f;
             }
 
             //MOVIMIENTO
