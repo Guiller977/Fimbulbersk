@@ -24,7 +24,7 @@ public class IcePlatform : MonoBehaviour
         if (collision.CompareTag("IceAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position - new Vector3(0, 3, 0), transform.rotation);
             theSR.sprite = null;
         }
     }
