@@ -24,7 +24,8 @@ public class IcePlatform : MonoBehaviour
         if (collision.CompareTag("IceAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position - new Vector3(0, 3, 0), transform.rotation);
+            IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+            AudioManager.sharedInstance.PlaySFX(1);
             theSR.sprite = null;
         }
     }
@@ -41,6 +42,7 @@ public class IcePlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(IcePlatformReference);
+        AudioManager.sharedInstance.PlaySFX(4);
         theSR.sprite = baseSprite;
     }
 }
