@@ -43,6 +43,5 @@ public class IcePlatform : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         Destroy(IcePlatformReference);
         AudioManager.sharedInstance.PlaySFX(4);
-        theSR.sprite = baseSprite;
     }
 }
