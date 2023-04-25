@@ -28,6 +28,7 @@ public class IceWall : MonoBehaviour
     private IEnumerator Melt()
     {
         yield return new WaitForSeconds(2.0f);
+        AudioManager.sharedInstance.PlaySFX(2);
         Destroy(this.gameObject);
     }
 }

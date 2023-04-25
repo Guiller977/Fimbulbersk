@@ -23,6 +23,7 @@ public class CreateIceZone : MonoBehaviour
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
             IceZoneReference = Instantiate(IceZone, collision.transform.position, transform.rotation);
+            AudioManager.sharedInstance.PlaySFX(0);
         }
     }
 
