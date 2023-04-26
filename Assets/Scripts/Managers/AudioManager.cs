@@ -27,7 +27,12 @@ public class AudioManager : MonoBehaviour
         //Si ya se estaba reproduciendo este sonido, lo paramos
         soundEffects[soundToPlay].Stop();
         //Alteramos un poco el sonido cada vez que se vaya a reproducir
-        soundEffects[soundToPlay].pitch = Random.Range(.9f, 1.1f);
+        if (soundToPlay == 13)
+        {
+            soundEffects[soundToPlay].pitch = 0.4f;
+        }
+
+        else soundEffects[soundToPlay].pitch = Random.Range(.9f, 1.1f);        
         //Reproducir el sonido pasado por parámetro
         soundEffects[soundToPlay].Play();
     }

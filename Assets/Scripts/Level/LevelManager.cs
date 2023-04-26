@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     public int gemCollected;
     public GameObject death_Effect;
+    public bool MoreHP;
 
     private void Awake()
     {
@@ -22,13 +23,19 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (MoreHP == true)
+        {
+            PlayerHealthController.sharedInstance.maxHealth = 4;
+            PlayerHealthController.sharedInstance.currentHealth = 4;
+            UIController.sharedInstance.UpdateHealthDisplay();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //OutOfBounds();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void RespawnPlayer()
@@ -57,7 +64,11 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator BossRespawnPlayer()
     {
-        Playercontroller.sharedInstance.gameObject.SetActive(false);
+        if(PlayerHealthController.sharedInstance.maxHealth == 4)
+        {
+            MoreHP = true;
+        }
+        Destroy(Playercontroller.sharedInstance.gameObject);
         Instantiate(death_Effect, Playercontroller.sharedInstance.transform.position, Playercontroller.sharedInstance.transform.rotation);
         UIController.sharedInstance.FadeToBlack();
         yield return new WaitForSeconds(timeToRespawn);

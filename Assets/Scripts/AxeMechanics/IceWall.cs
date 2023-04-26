@@ -21,14 +21,14 @@ public class IceWall : MonoBehaviour
         if (collision.CompareTag("FireAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
+            AudioManager.sharedInstance.PlaySFX(2);
             StartCoroutine(Melt());
         }
     }
 
     private IEnumerator Melt()
     {
-        yield return new WaitForSeconds(2.0f);
-        AudioManager.sharedInstance.PlaySFX(2);
+        yield return new WaitForSeconds(3.0f);
         Destroy(this.gameObject);
     }
 }

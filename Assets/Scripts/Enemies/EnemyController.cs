@@ -128,12 +128,14 @@ public class EnemyController : MonoBehaviour
             {
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isFrozen = false;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
 
             else
             {
                 DamageEnemy(AxeController.sharedInstance.damage);
                 StartCoroutine(Timer(1f));
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
         
@@ -144,12 +146,14 @@ public class EnemyController : MonoBehaviour
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isOnFire = true;
                 isFrozen = false;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
 
             else
             {
                 DamageEnemy(AxeController.sharedInstance.damage);
                 isOnFire = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
 
@@ -189,11 +193,13 @@ public class EnemyController : MonoBehaviour
                 DamageEnemy(30);
                 isFrozen = false;
                 isOnFire = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
             else
             {
                 DamageEnemy(15);
                 isOnFire = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
 
@@ -203,11 +209,13 @@ public class EnemyController : MonoBehaviour
             {
                 DamageEnemy(30);
                 isFrozen = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
             else
             {
                 DamageEnemy(15);
                 isFrozen = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
     }

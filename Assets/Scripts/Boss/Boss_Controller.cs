@@ -93,19 +93,23 @@ public class Boss_Controller : MonoBehaviour
         //Primera fase
         else
         {
+            //Shockwave
             inmuneToFire = true;
             if (cd < 0 && counter < 2)
             {
                 Instantiate(shockwave, shockwaveTransform.position, transform.rotation);
                 cd = cdDuration;
                 counter++;
+                AudioManager.sharedInstance.PlaySFX(12);
             }
-
+            //Big Shockwave
             if (cd < 0 && counter >= 2)
             {
                 Instantiate(bigShockwave, bigShockwaveTransform.position, transform.rotation);
                 cd = cdDuration;
                 counter = 0;
+                AudioManager.sharedInstance.soundEffects[13].Stop();
+                AudioManager.sharedInstance.soundEffects[13].Play();
             }
         }
     }

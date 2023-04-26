@@ -22,6 +22,7 @@ public class WindZone : MonoBehaviour
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
             windZoneReference = Instantiate(windZone, collision.transform.position + new Vector3(0f, 2f, 0f), transform.rotation);
+            AudioManager.sharedInstance.PlaySFX(5);
         }
     }
 
@@ -29,6 +30,7 @@ public class WindZone : MonoBehaviour
     {
         if (collision.CompareTag("FireAxe"))
         {
+            AudioManager.sharedInstance.soundEffects[5].Stop();
             Destroy(windZoneReference);
         }
     }
