@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
         if (hp <= 0)
         {
             Instantiate(a, transform.position, transform.rotation);
-            Debug.Log("muere");
+            AudioManager.sharedInstance.PlaySFX(14);
             this.gameObject.SetActive(false);
         }
 

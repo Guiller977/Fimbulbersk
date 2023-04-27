@@ -22,7 +22,7 @@ public class CreateIceZone : MonoBehaviour
         if (collision.CompareTag("IceAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
-            IceZoneReference = Instantiate(IceZone, collision.transform.position, transform.rotation);
+            IceZoneReference = Instantiate(IceZone, collision.transform.position - new Vector3 (0, 0.90f, 0), transform.rotation);
             AudioManager.sharedInstance.PlaySFX(0);
         }
     }
