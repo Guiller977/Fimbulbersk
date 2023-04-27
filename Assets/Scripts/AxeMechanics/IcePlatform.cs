@@ -25,6 +25,7 @@ public class IcePlatform : MonoBehaviour
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
             IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
             AudioManager.sharedInstance.PlaySFX(1);
             theSR.sprite = null;
         }
@@ -34,6 +35,7 @@ public class IcePlatform : MonoBehaviour
     {
         if (collision.CompareTag("IceAxe"))
         {
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
             StartCoroutine(Wait());
         }        
     }
