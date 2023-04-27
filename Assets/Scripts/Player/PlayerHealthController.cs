@@ -65,6 +65,7 @@ public class PlayerHealthController : MonoBehaviour
                 Playercontroller.sharedInstance.KnockBack();
             }
             UIController.sharedInstance.UpdateHealthDisplay();
+            AudioManager.sharedInstance.PlaySFX(7);
         }
     }
 
@@ -77,5 +78,6 @@ public class PlayerHealthController : MonoBehaviour
             
         }
         UIController.sharedInstance.UpdateHealthDisplay();
+        AudioManager.sharedInstance.PlaySFX(6);
     }
 }

@@ -140,6 +140,7 @@ public class Playercontroller : MonoBehaviour
                         theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
                         //Cambiar esto si se incluye doble salto
                         canDoubleJump = false;
+                        AudioManager.sharedInstance.PlaySFX(9);
                     }
                 }
                 else
@@ -148,6 +149,7 @@ public class Playercontroller : MonoBehaviour
                     {
                         theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
                         canDoubleJump = false;
+                        AudioManager.sharedInstance.PlaySFX(9);
                     }
                 }
                 if (theRB.velocity.x < 0)

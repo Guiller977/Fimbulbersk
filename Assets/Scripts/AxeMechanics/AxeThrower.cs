@@ -39,6 +39,7 @@ public class AxeThrower : MonoBehaviour
                 iceCanBeThrown = true;
                 Destroy(iceAxeReference);
                 cdCounter = cd;
+                AudioManager.sharedInstance.PlaySFX(15);
             }
             //Lanzar hacha de fuego
             if (Input.GetKeyDown(KeyCode.Mouse1) && fireCanBeThrown && cdCounter <= 0)
@@ -56,6 +57,7 @@ public class AxeThrower : MonoBehaviour
                 fireCanBeThrown = true;
                 Destroy(fireAxeReference);
                 cdCounter = cd;
+                AudioManager.sharedInstance.PlaySFX(15);
             }
         }
     }

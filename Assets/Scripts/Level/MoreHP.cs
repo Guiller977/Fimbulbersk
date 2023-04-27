@@ -24,6 +24,7 @@ public class MoreHP : MonoBehaviour
             PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
             UIController.sharedInstance.UpdateHealthDisplay();
             Destroy(this.gameObject);
+            AudioManager.sharedInstance.PlaySFX(16);
         }
     }
 }

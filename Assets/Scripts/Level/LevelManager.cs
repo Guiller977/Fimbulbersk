@@ -54,6 +54,7 @@ public class LevelManager : MonoBehaviour
     {
         Playercontroller.sharedInstance.gameObject.SetActive(false);
         Instantiate(death_Effect, Playercontroller.sharedInstance.transform.position, Playercontroller.sharedInstance.transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(8);
         yield return new WaitForSeconds(timeToRespawn);
         Playercontroller.sharedInstance.gameObject.SetActive(true);
         Playercontroller.sharedInstance.canDash = true;
