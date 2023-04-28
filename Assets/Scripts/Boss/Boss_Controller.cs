@@ -33,6 +33,7 @@ public class Boss_Controller : MonoBehaviour
         //Muerte
         if (hp <= 0)
         {
+            AudioManager.sharedInstance.PlaySFX(22);
             Destroy(this.gameObject);
         }
 
@@ -120,12 +121,14 @@ public class Boss_Controller : MonoBehaviour
         {
             hp = hp - 5;
             healthbar.SetHealth(hp);
+            AudioManager.sharedInstance.PlaySFX(Random.Range(18, 22));
         }
 
         else if (collision.CompareTag("FireAxe") && !inmuneToFire)
         {
             hp = hp - 5;
             healthbar.SetHealth(hp);
+            AudioManager.sharedInstance.PlaySFX(Random.Range(18, 22));
         }
 
         //else if (collision.CompareTag("LightHitbox"))

@@ -52,7 +52,7 @@ public class FlyingEnemyController : MonoBehaviour
         if (hp <= 0)
         {
             Instantiate(heart, transform.position, transform.rotation);
-            Debug.Log("muere");
+            AudioManager.sharedInstance.PlaySFX(17);
             this.gameObject.SetActive(false);
         }
 
