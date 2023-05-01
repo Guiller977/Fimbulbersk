@@ -31,7 +31,6 @@ public class PlayerHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (invincibleCounter > 0)
         {
             Playercontroller.sharedInstance.isHurt = true;

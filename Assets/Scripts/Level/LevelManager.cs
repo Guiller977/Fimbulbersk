@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(BossRespawnPlayer());
         }
-        else
+        else if (SceneManager.GetActiveScene().name.Equals("Level_1"))
         {
             StartCoroutine(RespawnPlayerCo());
         }

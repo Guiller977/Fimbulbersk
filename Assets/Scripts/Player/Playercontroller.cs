@@ -184,7 +184,7 @@ public class Playercontroller : MonoBehaviour
         anim.SetFloat("movSpeed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isHurt", isHurt);
-
+        
 
     }
     public void KnockBack()
