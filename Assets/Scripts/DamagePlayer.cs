@@ -22,6 +22,7 @@ public class DamagePlayer : MonoBehaviour
         {
             collision.GetComponent<PlayerHealthController>().DealWithDamage();
             collision.GetComponent<Playercontroller>().knockBackLength = 0.25f;
+            AudioManager.sharedInstance.PlaySFX(7);
         }
     }
 }

@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //Para saltar a la escena que le pasamos en la variable
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(startScene);
     }
 

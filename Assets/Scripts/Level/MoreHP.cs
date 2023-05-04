@@ -20,6 +20,7 @@ public class MoreHP : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            LevelManager.sharedInstance.MoreHP = true;
             PlayerHealthController.sharedInstance.maxHealth++;
             PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
             UIController.sharedInstance.UpdateHealthDisplay();

@@ -29,6 +29,7 @@ public class Switch : MonoBehaviour
         //Si pulsamos el botón E y el jugador puede interactuar
         if (Input.GetKeyDown(KeyCode.E) && Playercontroller.sharedInstance.canInteract)
         {
+            PlayerPrefs.SetInt("Health", PlayerHealthController.sharedInstance.maxHealth);
             SceneManager.LoadScene("Boss_Fight");
             ////Si no está activo el interruptor
             //if (!activateSwitch)

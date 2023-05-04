@@ -23,10 +23,10 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (MoreHP == true)
+        if (PlayerPrefs.HasKey("Health"))
         {
-            PlayerHealthController.sharedInstance.maxHealth = 4;
-            PlayerHealthController.sharedInstance.currentHealth = 4;
+            PlayerHealthController.sharedInstance.maxHealth = PlayerPrefs.GetInt("Health");
+            PlayerHealthController.sharedInstance.currentHealth = PlayerHealthController.sharedInstance.maxHealth;
             UIController.sharedInstance.UpdateHealthDisplay();
         }
     }
@@ -65,7 +65,8 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator BossRespawnPlayer()
     {
-        if(PlayerHealthController.sharedInstance.maxHealth == 4)
+        AudioManager.sharedInstance.PlaySFX(8);
+        if (PlayerHealthController.sharedInstance.maxHealth == 4)
         {
             MoreHP = true;
         }

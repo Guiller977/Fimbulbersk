@@ -101,7 +101,7 @@ Transform:
   - {fileID: 1697026125686851464}
   - {fileID: 1697026125236691360}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1697026125738322236
 Rigidbody2D:
@@ -167,6 +167,8 @@ MonoBehaviour:
   hp: 25
   isFrozen: 0
   isOnFire: 0
+  inmuneToIce: 0
+  inmuneToFire: 0
   leftPoint: {fileID: 1697026125686851464}
   rightPoint: {fileID: 1697026125236691360}
   moveTime: 3.75
@@ -257,7 +259,7 @@ GameObject:
   - component: {fileID: 1697026125789100197}
   m_Layer: 7
   m_Name: SlimeSprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +348,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4}
+    oldSize: {x: 1.28, y: 2.56}
     newSize: {x: 3.75, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

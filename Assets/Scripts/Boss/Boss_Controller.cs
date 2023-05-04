@@ -122,6 +122,7 @@ public class Boss_Controller : MonoBehaviour
             hp = hp - 5;
             healthbar.SetHealth(hp);
             AudioManager.sharedInstance.PlaySFX(Random.Range(18, 22));
+            AudioManager.sharedInstance.PlaySFX(10);
         }
 
         else if (collision.CompareTag("FireAxe") && !inmuneToFire)
@@ -129,6 +130,7 @@ public class Boss_Controller : MonoBehaviour
             hp = hp - 5;
             healthbar.SetHealth(hp);
             AudioManager.sharedInstance.PlaySFX(Random.Range(18, 22));
+            AudioManager.sharedInstance.PlaySFX(10);
         }
 
         //else if (collision.CompareTag("LightHitbox"))
