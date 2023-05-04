@@ -157,8 +157,10 @@ public class Boss_Controller : MonoBehaviour
     private IEnumerator IceRayTimer1()
     {
         Instantiate(preIceRay, top.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
         Instantiate(iceRay, top.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
         StopCoroutine(IceRayTimer1());
     }
@@ -166,8 +168,10 @@ public class Boss_Controller : MonoBehaviour
     private IEnumerator IceRayTimer2()
     {
         Instantiate(preIceRay, mid.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
         Instantiate(iceRay, mid.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
         StopCoroutine(IceRayTimer2());
     }
@@ -175,8 +179,10 @@ public class Boss_Controller : MonoBehaviour
     private IEnumerator IceRayTimer3()
     {
         Instantiate(preIceRay, bottom.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
         Instantiate(iceRay, bottom.position, transform.rotation);
+        AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
         StopCoroutine(IceRayTimer3());
     }
@@ -198,10 +204,12 @@ public class Boss_Controller : MonoBehaviour
             Instantiate(vPreIceRay, pos1.position, vPreIceRay.transform.rotation);
             Instantiate(vPreIceRay, pos2.position, vPreIceRay.transform.rotation);
             Instantiate(vPreIceRay, pos3.position, vPreIceRay.transform.rotation);
+            AudioManager.sharedInstance.PlaySFX(24);
             yield return new WaitForSeconds(2f);
             Instantiate(vIceRay, pos1.position, vIceRay.transform.rotation);
             Instantiate(vIceRay, pos2.position, vIceRay.transform.rotation);
             Instantiate(vIceRay, pos3.position, vIceRay.transform.rotation);
+            AudioManager.sharedInstance.PlaySFX(23);
             yield return new WaitForSeconds(2f);
             StopCoroutine(IceRayTimerVertical());
         }
