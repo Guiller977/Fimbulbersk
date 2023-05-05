@@ -12,6 +12,9 @@ public class AxeController : MonoBehaviour
     public static AxeController sharedInstance;
     public float damage;
     public float speed;
+
+    private float rotZ;
+    public float rotationSpeed;
     private void Awake()
     {
         if (sharedInstance == null)
@@ -28,15 +31,22 @@ public class AxeController : MonoBehaviour
         Throw();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        rotZ += -Time.deltaTime * rotationSpeed;
+        transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 
     void Throw()
     {
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(playerpos.position.x, playerpos.position.y, playerpos.position.z);
         theRB.AddForce(target.normalized * speed, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rotationSpeed = 0;
+        speed = 0;
     }
 
 

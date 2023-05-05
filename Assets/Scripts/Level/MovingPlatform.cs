@@ -17,7 +17,7 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        platform.position = Vector3.MoveTowards(platform.position, points[currentPoint].position, movSpeed);
+        platform.position = Vector3.MoveTowards(platform.position, points[currentPoint].position, movSpeed * Time.deltaTime);
 
         if (Vector3.Distance(platform.position, points[currentPoint].position) < 0.01f)
         {
