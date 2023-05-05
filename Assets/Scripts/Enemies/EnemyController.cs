@@ -32,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
     public static EnemyController sharedInstance;
 
+    public GameObject fireAxe, fireAxeReference, iceAxe, iceAxeReference;
+
     private void Awake()
     {
         if (sharedInstance == null)
@@ -124,6 +126,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.CompareTag("IceAxe") && !inmuneToIce)
         {
+            iceAxeReference = Instantiate(iceAxe, collision.transform.position, Quaternion.Euler(0, 0, -45));
             if (isFrozen == true)
             {
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
@@ -141,6 +144,7 @@ public class EnemyController : MonoBehaviour
         
         else if (collision.CompareTag("FireAxe") && !inmuneToFire)
         {
+            fireAxeReference = Instantiate(fireAxe, collision.transform.position, Quaternion.Euler(0, 0, -45));
             if (isFrozen == true)
             {
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
@@ -222,10 +226,22 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("FireAxe") || collision.CompareTag("IceAxe"))
+        if (collision.CompareTag("FireAxe"))
         {
+            collision.GetComponent<SpriteRenderer>().sprite = null;
+            collision.attachedRigidbody.freezeRotation = true;
             collision.transform.position = this.transform.position;
             collision.attachedRigidbody.velocity = theRB.velocity;
+            fireAxeReference.transform.position = this.transform.position;
+        }
+
+        else if (collision.CompareTag("IceAxe"))
+        {
+            collision.GetComponent<SpriteRenderer>().sprite = null;
+            collision.attachedRigidbody.freezeRotation = true;
+            collision.transform.position = this.transform.position;
+            collision.attachedRigidbody.velocity = theRB.velocity;
+            iceAxeReference.transform.position = this.transform.position;
         }
     }
 
@@ -233,6 +249,13 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.CompareTag("FireAxe"))
         {
+            Destroy(fireAxeReference);
+            StartCoroutine(StopFire());
+        }
+
+        if (collision.CompareTag("IceAxe"))
+        {
+            Destroy(iceAxeReference);
             StartCoroutine(StopFire());
         }
     }

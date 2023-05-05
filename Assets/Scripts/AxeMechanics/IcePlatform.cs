@@ -7,6 +7,7 @@ public class IcePlatform : MonoBehaviour
     public GameObject SolidIcePlatform, IcePlatformReference;
     private SpriteRenderer theSR;
     public Sprite baseSprite;
+    public GameObject iceAxe, iceAxeReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class IcePlatform : MonoBehaviour
     {
         if (collision.CompareTag("IceAxe"))
         {
-            collision.attachedRigidbody.velocity = new Vector2(0, 0);
+            collision.attachedRigidbody.velocity = new Vector2(0,0);
+            collision.gameObject.GetComponent<AxeController>().rotationSpeed = 0;
             IcePlatformReference = Instantiate(SolidIcePlatform, transform.position, transform.rotation);
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             AudioManager.sharedInstance.PlaySFX(1);

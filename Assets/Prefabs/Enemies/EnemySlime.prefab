@@ -175,6 +175,10 @@ MonoBehaviour:
   waitTime: 1
   invincibleCounter: 0
   a: {fileID: 8118575306062961447, guid: db229f16683d1214099915f6e558bbe9, type: 3}
+  fireAxe: {fileID: 7668847191543453480, guid: a9c6d480202b3da42b20bba937030a01, type: 3}
+  fireAxeReference: {fileID: 0}
+  iceAxe: {fileID: 440061525885612130, guid: 19c90e60d8d304a47a825a9af3efda68, type: 3}
+  iceAxeReference: {fileID: 0}
 --- !u!114 &1697026125738322233
 MonoBehaviour:
   m_ObjectHideFlags: 0

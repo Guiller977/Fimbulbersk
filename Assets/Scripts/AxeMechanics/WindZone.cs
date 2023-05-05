@@ -5,6 +5,7 @@ using UnityEngine;
 public class WindZone : MonoBehaviour
 {
     public GameObject windZone, windZoneReference;
+    public GameObject FireAxe, FireAxeReference;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,11 @@ public class WindZone : MonoBehaviour
     {
         if (collision.CompareTag("FireAxe"))
         {
-            collision.attachedRigidbody.velocity = new Vector2(0, 0);
+            collision.attachedRigidbody.velocity = new Vector2(0, -5f);
+            collision.GetComponent<SpriteRenderer>().sprite = null;
+            collision.attachedRigidbody.freezeRotation = true;
             windZoneReference = Instantiate(windZone, collision.transform.position + new Vector3(0f, 2f, 0f), transform.rotation);
+            FireAxeReference = Instantiate(FireAxe, collision.transform.position, Quaternion.Euler(0, 0, -90));
             AudioManager.sharedInstance.PlaySFX(5);
         }
     }
@@ -32,6 +36,7 @@ public class WindZone : MonoBehaviour
         {
             AudioManager.sharedInstance.soundEffects[5].Stop();
             Destroy(windZoneReference);
+            Destroy(FireAxeReference);
         }
     }
 }
