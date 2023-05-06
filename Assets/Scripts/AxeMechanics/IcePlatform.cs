@@ -44,7 +44,7 @@ public class IcePlatform : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(IcePlatformReference);
         AudioManager.sharedInstance.PlaySFX(4);
     }
