@@ -24,6 +24,7 @@ public class Large_Ice_Platform : MonoBehaviour
         if (collision.CompareTag("IceAxe"))
         {
             collision.attachedRigidbody.velocity = new Vector2(0, 0);
+            collision.gameObject.GetComponent<AxeController>().rotationSpeed = 0;
             IcePlatformReference = Instantiate(SolidIcePlatform, transform.position - new Vector3(0, 3, 0), transform.rotation);
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             AudioManager.sharedInstance.PlaySFX(1);
@@ -42,7 +43,7 @@ public class Large_Ice_Platform : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(IcePlatformReference);
         AudioManager.sharedInstance.PlaySFX(4);
     }
