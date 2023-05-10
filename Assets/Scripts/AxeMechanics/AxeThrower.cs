@@ -26,7 +26,7 @@ public class AxeThrower : MonoBehaviour
             //Lanzar hacha de hielo
             if (Input.GetKeyDown(KeyCode.Mouse0) && iceCanBeThrown && cdCounter <= 0)
             {
-                iceAxeSprite.SetActive(false);
+                //iceAxeSprite.SetActive(false);
                 iceAxeReference = Instantiate(iceAxe, transform.position, transform.rotation);
                 iceCanBeThrown = false;
                 cdCounter = cd;
@@ -35,7 +35,7 @@ public class AxeThrower : MonoBehaviour
             //Recoger hacha de hielo
             else if (Input.GetKeyDown(KeyCode.Mouse0) && !iceCanBeThrown && cdCounter <= 0)
             {
-                iceAxeSprite.SetActive(true);
+                //iceAxeSprite.SetActive(true);
                 iceCanBeThrown = true;
                 Destroy(iceAxeReference);
                 cdCounter = cd;
@@ -44,7 +44,7 @@ public class AxeThrower : MonoBehaviour
             //Lanzar hacha de fuego
             if (Input.GetKeyDown(KeyCode.Mouse1) && fireCanBeThrown && cdCounter <= 0)
             {
-                fireAxeSprite.SetActive(false);
+                //fireAxeSprite.SetActive(false);
                 fireAxeReference = Instantiate(fireAxe, transform.position, transform.rotation);
                 fireCanBeThrown = false;
                 cdCounter = cd;
@@ -53,7 +53,7 @@ public class AxeThrower : MonoBehaviour
             //Recoger hacha de fuego
             else if (Input.GetKeyDown(KeyCode.Mouse1) && !fireCanBeThrown && cdCounter <= 0)
             {
-                fireAxeSprite.SetActive(true);
+                //fireAxeSprite.SetActive(true);
                 fireCanBeThrown = true;
                 Destroy(fireAxeReference);
                 cdCounter = cd;
