@@ -10,11 +10,17 @@ public class AxeThrower : MonoBehaviour
 
     public static AxeThrower sharedInstance;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         iceCanBeThrown = true;
         fireCanBeThrown = true;
+        anim.SetBool("hasIce", true);
+        anim.SetBool("hasFire", true);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +37,8 @@ public class AxeThrower : MonoBehaviour
                 iceCanBeThrown = false;
                 cdCounter = cd;
                 AudioManager.sharedInstance.PlaySFX(11);
+                anim.SetBool("hasIce", false);
+                
             }
             //Recoger hacha de hielo
             else if (Input.GetKeyDown(KeyCode.Mouse0) && !iceCanBeThrown && cdCounter <= 0)
@@ -40,6 +48,7 @@ public class AxeThrower : MonoBehaviour
                 Destroy(iceAxeReference);
                 cdCounter = cd;
                 AudioManager.sharedInstance.PlaySFX(15);
+                anim.SetBool("hasIce", true);
             }
             //Lanzar hacha de fuego
             if (Input.GetKeyDown(KeyCode.Mouse1) && fireCanBeThrown && cdCounter <= 0)
@@ -49,6 +58,7 @@ public class AxeThrower : MonoBehaviour
                 fireCanBeThrown = false;
                 cdCounter = cd;
                 AudioManager.sharedInstance.PlaySFX(11);
+                anim.SetBool("hasFire", false);
             }
             //Recoger hacha de fuego
             else if (Input.GetKeyDown(KeyCode.Mouse1) && !fireCanBeThrown && cdCounter <= 0)
@@ -58,6 +68,7 @@ public class AxeThrower : MonoBehaviour
                 Destroy(fireAxeReference);
                 cdCounter = cd;
                 AudioManager.sharedInstance.PlaySFX(15);
+                anim.SetBool("hasFire", true);
             }
         }
     }
