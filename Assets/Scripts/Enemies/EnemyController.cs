@@ -88,7 +88,7 @@ public class EnemyController : MonoBehaviour
                 theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
             
                 //Giramos en horizontal el sprite del enemigo
-                theSR.flipX = true;
+                theSR.flipX = false;
             
                 //Si la posición en X del enemigo está más a la derecha que el RighPoint
                 if (transform.position.x > rightPoint.position.x)
@@ -104,7 +104,7 @@ public class EnemyController : MonoBehaviour
                 theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
             
                 //Mantenemos la dirección hacia la que mira el sprite
-                theSR.flipX = false;
+                theSR.flipX = true;
             
                 //Si la posición en X del enemigo está más a la izquierda que el LeftPoint
                 if (transform.position.x < leftPoint.position.x)
