@@ -322,6 +322,7 @@ MonoBehaviour:
   damage: 0
   cd: 0.25
   cdCounter: 0
+  anim: {fileID: 6898629132461322786}
 --- !u!114 &1436139531
 MonoBehaviour:
   m_ObjectHideFlags: 0
