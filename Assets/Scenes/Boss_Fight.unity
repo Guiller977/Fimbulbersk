@@ -7082,6 +7082,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6141484739262400320, guid: 8a2f1a6f11114d94d9c8dbb031e4ee9b, type: 3}
+      propertyPath: death_Effect
+      value: 
+      objectReference: {fileID: 1906102675}
     - target: {fileID: 6141484739262400321, guid: 8a2f1a6f11114d94d9c8dbb031e4ee9b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7404,6 +7408,11 @@ Transform:
   m_Father: {fileID: 405767068}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1906102675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2995766858723579030, guid: 8a6dea0469ac2944b814631a80d38275, type: 3}
+  m_PrefabInstance: {fileID: 958434493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1937735959
 PrefabInstance:
   m_ObjectHideFlags: 0

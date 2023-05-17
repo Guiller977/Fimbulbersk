@@ -159,9 +159,11 @@ public class Boss_Controller : MonoBehaviour
 
     private IEnumerator IceRayTimer1()
     {
+        anim.SetBool("iceH", true);
         Instantiate(preIceRay, top.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
+        anim.SetBool("iceH", false);
         Instantiate(iceRay, top.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
@@ -170,9 +172,11 @@ public class Boss_Controller : MonoBehaviour
 
     private IEnumerator IceRayTimer2()
     {
+        anim.SetBool("iceH", true);
         Instantiate(preIceRay, mid.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
+        anim.SetBool("iceH", false);
         Instantiate(iceRay, mid.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
@@ -181,9 +185,11 @@ public class Boss_Controller : MonoBehaviour
 
     private IEnumerator IceRayTimer3()
     {
+        anim.SetBool("iceH", true);
         Instantiate(preIceRay, bottom.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(24);
         yield return new WaitForSeconds(2f);
+        anim.SetBool("iceH", false);
         Instantiate(iceRay, bottom.position, transform.rotation);
         AudioManager.sharedInstance.PlaySFX(23);
         yield return new WaitForSeconds(2f);
@@ -204,11 +210,13 @@ public class Boss_Controller : MonoBehaviour
 
         else
         {
+            anim.SetBool("iceV", true);
             Instantiate(vPreIceRay, pos1.position, vPreIceRay.transform.rotation);
             Instantiate(vPreIceRay, pos2.position, vPreIceRay.transform.rotation);
             Instantiate(vPreIceRay, pos3.position, vPreIceRay.transform.rotation);
             AudioManager.sharedInstance.PlaySFX(24);
             yield return new WaitForSeconds(2f);
+            anim.SetBool("iceV", false);
             Instantiate(vIceRay, pos1.position, vIceRay.transform.rotation);
             Instantiate(vIceRay, pos2.position, vIceRay.transform.rotation);
             Instantiate(vIceRay, pos3.position, vIceRay.transform.rotation);
