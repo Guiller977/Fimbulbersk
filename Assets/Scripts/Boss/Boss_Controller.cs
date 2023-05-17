@@ -18,12 +18,15 @@ public class Boss_Controller : MonoBehaviour
     public Transform pos1, pos2, pos3;
 
     public Health_Bar healthbar;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         cd = 1.5f;
         hp = maxhp;
         healthbar.SetMaxHealth(maxhp);
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -98,7 +101,7 @@ public class Boss_Controller : MonoBehaviour
             inmuneToFire = true;
             if (cd < 0 && counter < 2)
             {
-                Instantiate(shockwave, shockwaveTransform.position, transform.rotation);
+                StartCoroutine(shockwaveTimer());
                 cd = cdDuration;
                 counter++;
                 AudioManager.sharedInstance.PlaySFX(12);
@@ -106,7 +109,7 @@ public class Boss_Controller : MonoBehaviour
             //Big Shockwave
             if (cd < 0 && counter >= 2)
             {
-                Instantiate(bigShockwave, bigShockwaveTransform.position, transform.rotation);
+                StartCoroutine(shockwaveTimer());               
                 cd = cdDuration;
                 counter = 0;
                 AudioManager.sharedInstance.soundEffects[13].Stop();
@@ -212,6 +215,25 @@ public class Boss_Controller : MonoBehaviour
             AudioManager.sharedInstance.PlaySFX(23);
             yield return new WaitForSeconds(2f);
             StopCoroutine(IceRayTimerVertical());
+        }
+        
+    }
+
+    private IEnumerator shockwaveTimer()
+    {
+        anim.SetBool("shockwave", true);
+        yield return new WaitForSeconds(0.2f);
+        if (counter < 2)
+        {
+            Instantiate(shockwave, shockwaveTransform.position, transform.rotation);
+            anim.SetBool("shockwave", false);
+            StopCoroutine(shockwaveTimer());
+        }
+        if (counter >= 2)
+        {
+            Instantiate(bigShockwave, bigShockwaveTransform.position, transform.rotation);
+            anim.SetBool("shockwave", false);
+            StopCoroutine(shockwaveTimer());
         }
         
     }

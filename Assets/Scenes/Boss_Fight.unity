@@ -214,7 +214,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -4868,6 +4868,11 @@ Transform:
   m_Father: {fileID: 405767068}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &102605082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7900919731506737961, guid: 63265a00a676a5841932779e3d9a7cf1, type: 3}
+  m_PrefabInstance: {fileID: 1937735959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &405767068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3390687873719003203, guid: 4737d52a823a8c244b2146af6ecad55e, type: 3}
@@ -7343,6 +7348,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1734709585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3390687873719003205, guid: 4737d52a823a8c244b2146af6ecad55e, type: 3}
+  m_PrefabInstance: {fileID: 3390687873826102958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1734709586
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734709585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b43c57ca6d30b1428aa08fc83111399, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1860774591
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,12 +7600,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 296165236, guid: 63265a00a676a5841932779e3d9a7cf1, type: 3}
   m_PrefabInstance: {fileID: 1937735959}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 102605082}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01a1e261c8b3ad646a81aaddcfdc9962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2124576165
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102605082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 557c364497d65cd44935ee11649126c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2143109328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6165551244807873582, guid: 4737d52a823a8c244b2146af6ecad55e, type: 3}
@@ -7717,6 +7767,10 @@ PrefabInstance:
       propertyPath: bigShockwave
       value: 
       objectReference: {fileID: 857679589818602195, guid: d01d9bd4f5ed85644a157b7c0a814cff, type: 3}
+    - target: {fileID: 3390687873719003230, guid: 4737d52a823a8c244b2146af6ecad55e, type: 3}
+      propertyPath: shockwaveAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 446b219d1291627429ed0d2a01105790, type: 2}
     - target: {fileID: 3390687873719003230, guid: 4737d52a823a8c244b2146af6ecad55e, type: 3}
       propertyPath: bigShockwaveTransform
       value: 
