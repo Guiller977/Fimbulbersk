@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_Controller : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Boss_Controller : MonoBehaviour
         //Muerte
         if (hp <= 0)
         {
+            LevelManager.sharedInstance.bossDeath = true;
             AudioManager.sharedInstance.PlaySFX(22);
             Destroy(this.gameObject);
         }

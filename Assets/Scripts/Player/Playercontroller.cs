@@ -98,34 +98,34 @@ public class Playercontroller : MonoBehaviour
             //}
 
             //Ice
-            if (Input.GetKeyDown(KeyCode.F) && isLeft == false && attackCooldown <= 0 && iceAttackCD <= 0)
-            {
-                Instantiate(iceHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-                attackCooldown = 2f;
-                iceAttackCD = 30f;
-            }
+            //if (Input.GetKeyDown(KeyCode.F) && isLeft == false && attackCooldown <= 0 && iceAttackCD <= 0)
+            //{
+            //    Instantiate(iceHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 2f;
+            //    iceAttackCD = 30f;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.F) && isLeft == true && attackCooldown <= 0 && iceAttackCD <= 0)
-            {
-                Instantiate(iceHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-                attackCooldown = 2f;
-                iceAttackCD = 30f;
-            }
+            //if (Input.GetKeyDown(KeyCode.F) && isLeft == true && attackCooldown <= 0 && iceAttackCD <= 0)
+            //{
+            //    Instantiate(iceHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 2f;
+            //    iceAttackCD = 30f;
+            //}
 
-            //Fire
-            if (Input.GetKeyDown(KeyCode.R) && isLeft == false && attackCooldown <= 0 && fireAttackCD <= 0)
-            {
-                //Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-                attackCooldown = 2f;
-                fireAttackCD = 1f;
-            }
+            ////Fire
+            //if (Input.GetKeyDown(KeyCode.R) && isLeft == false && attackCooldown <= 0 && fireAttackCD <= 0)
+            //{
+            //    //Instantiate(fireHitbox, new Vector3(this.transform.position.x + 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 2f;
+            //    fireAttackCD = 1f;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.R) && isLeft == true && attackCooldown <= 0 && fireAttackCD <= 0)
-            {
-                //Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
-                attackCooldown = 2f;
-                fireAttackCD = 1f;
-            }
+            //if (Input.GetKeyDown(KeyCode.R) && isLeft == true && attackCooldown <= 0 && fireAttackCD <= 0)
+            //{
+            //    //Instantiate(fireHitbox, new Vector3(this.transform.position.x - 4.0f, this.transform.position.y + 1.5f, this.transform.position.z), this.transform.rotation);
+            //    attackCooldown = 2f;
+            //    fireAttackCD = 1f;
+            //}
 
             //MOVIMIENTO
 

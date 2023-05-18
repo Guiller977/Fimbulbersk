@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     public GameObject death_Effect;
     public bool MoreHP;
 
+    public bool bossDeath;
+
     private void Awake()
     {
         if (sharedInstance == null)
@@ -36,6 +38,11 @@ public class LevelManager : MonoBehaviour
     {
         //OutOfBounds();
         DontDestroyOnLoad(this.gameObject);
+
+        if (bossDeath == true)
+        {
+            StartCoroutine(bossDeathSequence());
+        }
     }
 
     public void RespawnPlayer()
@@ -76,6 +83,13 @@ public class LevelManager : MonoBehaviour
         UIController.sharedInstance.FadeToBlack();
         yield return new WaitForSeconds(timeToRespawn);
         SceneManager.LoadScene("Boss_Fight");
+    }
+
+    private IEnumerator bossDeathSequence()
+    {
+        UIController.sharedInstance.FadeToBlack();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Credits");
     }
 }
 

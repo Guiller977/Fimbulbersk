@@ -138,12 +138,14 @@ public class FlyingEnemyController : MonoBehaviour
             {
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isFrozen = false;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
 
             else
             {
                 DamageEnemy(AxeController.sharedInstance.damage);
                 StartCoroutine(Timer(1f));
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
 
@@ -154,12 +156,14 @@ public class FlyingEnemyController : MonoBehaviour
                 DamageEnemy(AxeController.sharedInstance.damage * 2);
                 isOnFire = true;
                 isFrozen = false;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
 
             else
             {
                 DamageEnemy(AxeController.sharedInstance.damage);
                 isOnFire = true;
+                AudioManager.sharedInstance.PlaySFX(10);
             }
         }
 
