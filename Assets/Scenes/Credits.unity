@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.91434, y: 14.4485}
-  m_SizeDelta: {x: 1698.2, y: 952.7029}
+  m_AnchoredPosition: {x: -0.0035591, y: 14.3071}
+  m_SizeDelta: {x: 1920, y: 996.9576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348942347
 MonoBehaviour:
@@ -181,11 +181,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THANK YOU FOR PLAYING!\nTHIS IS MY FIRST EVER GAME AND ALTHOUGHT A LOT
-    CAN BE IMPROVED SPECIALLY GRAPHIC-WISE I HOPE YOU HAD A GREAT TIME AND EJONYED
-    IT\n\nGAME MADE BY GUILLERMO GALDON CANTOS (@GUIGALDEV IN TWITTER)\n\nMUSIC MADE
-    BY JAVIER MARIANO PORRAS ALCON \n\nIF YOU WANT TO PLAY AGAIN NOW PRESS ESCAPE,
-    GO TO MAIN TITLE AND NEW GAME"
+  m_text: 'THANK YOU FOR PLAYING!
+
+    THIS IS MY FIRST EVER GAME AND ALTHOUGHT A
+    LOT CAN BE IMPROVED SPECIALLY GRAPHIC-WISE I HOPE YOU HAD A GREAT TIME AND EJONYED
+    IT
+
+
+    GAME MADE BY GUILLERMO GALDON CANTOS (@GUIGALDEV IN TWITTER)
+
+
+    MUSIC
+    MADE BY JAVIER MARIANO PORRAS ALCON (javieralconmusic in instagram)
+
+
+    IF
+    YOU WANT TO PLAY AGAIN NOW PRESS ESCAPE, GO TO MAIN TITLE AND NEW GAME'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 43512f76f5a792a43b7d756f709f402f, type: 2}
   m_sharedMaterial: {fileID: 3957962583240565633, guid: 43512f76f5a792a43b7d756f709f402f, type: 2}
